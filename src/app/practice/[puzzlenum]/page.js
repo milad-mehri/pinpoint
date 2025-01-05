@@ -7,12 +7,32 @@ import path from "path";
 import Papa from "papaparse";
 import { notFound } from 'next/navigation';
 
-/**
- * Server Component: PracticePuzzle
- * 
- * This component fetches and displays a specific puzzle based on the URL parameter.
- * All logic is handled server-side, eliminating the need for client-side API calls.
- */
+// Add this function
+export async function generateStaticParams() {
+  // 1. Define the path to the CSV file
+  const csvFilePath = path.join(process.cwd(), "public", "categories.csv");
+
+  // 2. Read the CSV file content
+  const csvData = await fs.readFile(csvFilePath, "utf-8");
+
+  // 3. Parse the CSV data using Papa Parse
+  const parsedData = Papa.parse(csvData, { header: true });
+
+  // 4. Validate the parsed data structure
+  if (!parsedData || !parsedData.data || !Array.isArray(parsedData.data)) {
+    throw new Error("Invalid CSV format. Expected an array of data.");
+  }
+
+  const totalPuzzles = parsedData.data.length;
+
+  // 5. Generate an array of params for each puzzle (1-based indexing)
+  const params = Array.from({ length: totalPuzzles }, (_, index) => ({
+    puzzlenum: (index + 1).toString(),
+  }));
+
+  return params;
+}
+
 export default async function PracticePuzzle({ params }) {
   const { puzzlenum } = await params; // Extract the puzzle number from the URL
 
