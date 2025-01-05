@@ -84,7 +84,7 @@ async function main() {
   // Fields to capitalize
   const fields = ['word1', 'word2', 'word3', 'word4', 'word5'];
   
-  try {
+  try { 
     // Check if input CSV exists
     await fs.access(inputCSV);
   } catch (err) {
