@@ -55,7 +55,7 @@ const InstructionsModal = ({ onClose }) => {
         {/* Placeholder for Gameplay GIF */}
         <div className="w-full h-58 bg-gray-200 rounded-md mb-4 flex items-center justify-center overflow-hidden">
           <img
-            src="/example2.gif"
+            src="/pinpoint/example2.gif"
             alt="Gameplay demonstration"
             className="w-full h-full  rounded-md object-cover scale-120"
             style={{
@@ -64,6 +64,14 @@ const InstructionsModal = ({ onClose }) => {
             }}
           />
         </div>
+        <Link
+          href="https://milad-mehri.github.io/"
+          className="text-sm text-blue-800 font-extrabold hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Contact
+        </Link>
 
         {/* Navigation Buttons
         <div className="flex justify-center gap-4">
