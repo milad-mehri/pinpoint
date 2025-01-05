@@ -11,6 +11,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        custom: "700px", // Custom breakpoint for 700px
+      },
     },
   },
   plugins: [],
