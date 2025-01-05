@@ -1,0 +1,7 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/practice/page": "app/practice/page.js",
+  "/page": "app/page.js",
+  "/practice/[puzzlenum]/page": "app/practice/[puzzlenum]/page.js"
+}
