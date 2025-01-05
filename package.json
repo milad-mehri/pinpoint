@@ -1,16 +1,12 @@
-
 {
   "name": "pinpoint",
   "version": "0.1.0",
-  "homepage": "https://milad-mehri.github.io/pinpoint",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "predeploy": "npm run build",
-   "deploy": "gh-pages -d .next"
+    "lint": "next lint"
   },
   "dependencies": {
     "framer-motion": "^11.15.0",
