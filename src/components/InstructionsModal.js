@@ -71,6 +71,14 @@ const InstructionsModal = ({ onClose }) => {
           rel="noopener noreferrer"
         >
           Contact
+        </Link><span>, </span> 
+        <Link
+          href="https://github.com/milad-mehri/pinpoint/"
+          className="text-sm text-blue-800 font-extrabold hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+           Github
         </Link>
 
         {/* Navigation Buttons
