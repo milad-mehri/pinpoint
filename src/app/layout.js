@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Script from 'next/script';
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +14,12 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Pinpoint - The Ultimate Category Guessing Game",
-  description: "Challenge your knowledge and intuition in Pinpoint! Guess the correct category based on given clues. Fun, engaging, and perfect for trivia lovers!",
+  description:
+    "Challenge your knowledge and intuition in Pinpoint! Guess the correct category based on given clues. Fun, engaging, and perfect for trivia lovers!",
   openGraph: {
     title: "Pinpoint - The Ultimate Category Guessing Game",
-    description: "Test your knowledge and intuition in Pinpoint! Can you guess the correct category from the clues? Join the fun now!",
+    description:
+      "Test your knowledge and intuition in Pinpoint! Can you guess the correct category from the clues? Join the fun now!",
     url: "https://milad-mehri.github.io/pinpoint/",
     images: [
       {
@@ -31,11 +33,12 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pinpoint - The Ultimate Category Guessing Game",
-    description: "Dive into the fun of Pinpoint! Guess the categories, test your wits, and share the challenge with friends.",
-    images: ["https://milad-mehri.github.io/pinpoint/example2.gif"], 
+    description:
+      "Dive into the fun of Pinpoint! Guess the categories, test your wits, and share the challenge with friends.",
+    images: ["https://milad-mehri.github.io/pinpoint/example2.gif"],
   },
   icons: {
-    icon: "https://milad-mehri.github.io/pinpoint/favicon.ico", 
+    icon: "https://milad-mehri.github.io/pinpoint/favicon.ico",
   },
 };
 
@@ -50,11 +53,14 @@ export default function RootLayout({ children }) {
         />
         <Script id="google-analytics">
           {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-LXN713BY75');
-          `}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LXN713BY75', {
+        cookie_domain: 'milad-mehri.github.io', // Your GitHub Pages domain
+        cookie_flags: 'SameSite=None;Secure'   // Ensures cookie compatibility for HTTPS
+      });
+    `}
         </Script>
       </head>
 
