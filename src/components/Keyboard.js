@@ -9,15 +9,14 @@ const Keyboard = ({ onKeyPress }) => {
 
   return (
     <div className="mt-4 space-y-2 sm:hidden">
-      {" "}
-      {/* Hidden on larger screens */}
       {qwertyKeys.map((row, rowIndex) => (
         <div key={rowIndex} className="flex justify-center gap-1">
           {row.map((key) => (
             <button
               key={key}
               onClick={() => onKeyPress(key)}
-              className="bg-[#62c5d6] py-4 px-3 text-white text-sm rounded hover:bg-[#62c5d6]"
+              className="flex-1 bg-[#62c5d6] py-4 text-white text-sm rounded hover:bg-[#62c5d6] max-w-[10%]"
+              style={{ flexBasis: "10%" }} // Ensure each key takes up proportional space
             >
               {key}
             </button>
