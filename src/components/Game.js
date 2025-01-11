@@ -321,7 +321,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
             {correctGuess ? (
               <>
                 <p className="text-lg text-green-500 mb-2">
-                  You are smarter than{" "}
+                  Correct! You are smarter than{" "}
                   <span className="font-bold">{difficulty}%</span> of players.
                 </p>
                 <h2 className="text-2xl font-bold text-black">{category}</h2>
@@ -329,7 +329,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
             ) : (
               <>
                 <p className="text-lg text-red-500 mb-2">
-                  You did not guess correct.
+                  Wrong! You did not guess correct.
                 </p>
                 <h2 className="text-2xl font-bold text-black">{category}</h2>
               </>
