@@ -1,7 +1,7 @@
 category,key_words,word1,word2,word3,word4,word5,difficulty
 
-
-Jan 3
+Famous Short Stories,story;short;literature;tale;fiction,Masque,Lottery,Usher,Hills,Algernon,45
+Cult Classic Films,film;movie;cinema;cult;classic,Cult,Midnight,Bizarre,Indie,Reel,48
 Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
 Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
 Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
@@ -65,3 +65,446 @@ Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
 Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
 Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
 Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Famous Landmarks,land;mark;place;monument;site,Eiffel,Pyramids,Clock,Torch,Mount,55
+Classic Inventions,invent;inventor;discovery;device;creation,Lightbulb,Penicillin,Wheel,Camera,Radio,50
+Iconic Bridges,bridge;span;overpass;structure;cross,Golden,Tower,Suspension,Arch,River,52
+Legendary Swords,sword;blade;weapon;knight;arm,Excalibur,Masamune,Claymore,Katana,Frost,58
+Historic Explorers,explorer;travel;voyage;adventure;discover,Compass,Sail,Spice,Map,America,53
+Popular Chocolates,choc;chocolate;candy;bar;sweet,Fudge,Truffle,Cocoa,Caramel,Wafer,47
+Famous Scientists,science;scientist;research;theory;lab,Gravity,Evolution,E=mc2,Germ,Polio,60
+Comic Superteams,comic;team;hero;group;league,Avenger,Justice,Fantastic,Titan,Guardians,54
+Timeless Paintings,paint;art;canvas;gallery;masterpiece,Mona,Starry,Guernica,Persistence,Water,56
+Renaissance Artists,artist;paint;sculpt;revival;humanism,Leo,Rafa,Venus,David,Chapel,61
+Space Missions,space;rocket;launch;orbit;mission,Apollo,Shuttle,Probe,ISS,Lander,58
+Famous Deserts,desert;sand;dune;arid;dry,Sahara,Gobi,Outback,Atacama,Sonoran,49
+Notable Philosophers,philo;think;ideas;wisdom;mind,Allegory,Ethics,Reason,Exist,Uber,63
+Famous Astronomers,astronomy;space;stars;observe;telescope,Retrograde,Helio,Comet,Ring,Moons,55
+Historic Wars,war;conflict;battle;military;history,Trench,Civil,Crusade,Invasion,Revolution,59
+Classic Novels,novel;book;story;literature;tale,Orwell,Whale,Scout,Scarlet,Expectations,44
+Greek Mythology,greek;myth;god;legend;ancient,Lightning,Underworld,Olive,Olympus,Gorgon,57
+Types of Pasta,pasta;noodle;italian;food;dish,Fettuccine,Spiral,Shell,Tube,Ravioli,37
+Famous Magicians,magic;illusion;trick;stage;perform,Houdini,Dove,Rabbit,Wand,Levitate,51
+Historical Empires,empire;realm;kingdom;ancient;dynasty,Roman,Ming,Inca,Ottoman,Persian,62
+Important Scientists,science;lab;discover;theory;research,Quantum,Vaccine,Relativity,Atom,Magnetism,60
+World Languages,lang;language;tongue;speak;words,English,Mandarin,Sign,Hindi,Arabic,46
+Oceanic Creatures,ocean;sea;marine;fish;creature,Reef,Krill,Current,Dorsal,Orca,43
+Famous Directors,direct;film;cinema;movie;filmmaker,Hitchcock,Spielberg,Coen,Scorsese,Tarantino,54
+Classic Video Games,game;gaming;arcade;retro;console,Pixel,Joystick,Coins,Plumber,Labyrinth,48
+Tropical Fruits,fruit;food;tropical;orchard;plant,Pineapple,Mango,Dragon,Passion,Guava,35
+Historic Documents,doc;document;manuscript;paper;record,Magna,Declaration,Constitution,Scroll,Patent,58
+Famous Lakes,lake;water;fresh;inland;body,Superior,Loch,Ontario,Titicaca,Victoria,42
+Olympic Events,olympic;games;sport;international;compete,Track,Mat,Podium,Rings,Torch,56
+Space Phenomena,space;cosmos;celestial;universe;phenomenon,Quasar,Black,Supernova,Meteor,Redshift,64
+Haunted Places,haunt;ghost;spooky;place;paranormal,Banshee,Eerie,Manor,Grave,Draft,50
+Famous Beaches,beach;coast;sand;shore;sea,Bondi,Waikiki,Driftwood,Bora,Tulum,38
+Iconic Festivals,fest;festival;celebrate;event;culture,Mask,Holi,Oktober,Chingay,Float,47
+Popular Board Games,board;game;family;strategy;fun,Colonist,Peg,Stacks,Hotels,Clue,39
+Famous Dog Breeds,dog;canine;breed;pet;animal,Retriever,Pug,Beagle,Hound,Bulldog,45
+Historical Figures,history;past;figure;leader;person,Reformer,Manifesto,Monarch,Revolutionary,Suffrage,57
+Famous Mountains,mountain;peak;range;summit;high,Kilimanjaro,Denali,Blanc,Fuji,Alps,53
+Iconic Sculptures,sculpt;statue;marble;art;carve,Marble,David,Pieta,Thinker,Venus,49
+Common Herbs,herb;spice;aroma;plant;cuisine,Parsley,Sage,Thyme,Basil,Oregano,34
+Famous Cheeses,cheese;dairy;milk;food;curd,Brie,Gouda,Feta,Cheddar,Edam,36
+Influential Musicians,music;musician;artist;composer;band,Beatle,Ziggy,Thriller,Diva,Maestro,55
+Famous Playwrights,play;theatre;drama;author;stage,Globe,Tragedy,Comedy,Verse,Fool,52
+Ancient Civilizations,civil;ancient;people;culture;past,Aztec,Maya,Harappa,Nile,Mediterranean,60
+Famous Poets,poem;poet;verse;literary;lyric,Sonnet,Quill,Stanza,Bard,Rhyme,44
+Popular Ice Creams,ice;cream;dessert;flavor;sweet,Vanilla,Rocky,Chunk,Swirl,Sunday,41
+Famous Airlines,air;plane;flight;travel;carrier,Delta,Qantas,Lufthansa,Emirates,ANA,37
+Historic Cathedrals,cathedral;church;religion;architecture;holy,Gothic,Spire,Chapel,Nave,Choir,59
+Famous Philosophers,philosophy;think;mind;ideas;theory,Reason,Ethics,Form,Superman,Absurd,62
+Popular Cocktails,cocktail;drink;bar;mix;alcohol,Mojito,Collins,Fizz,Twist,Rim,46
+Exotic Flowers,flower;botany;bloom;garden;plant,Orchid,Hibiscus,Canna,Lotus,Bird,43
+Notable Volcanoes,volcano;eruption;lava;geology;mount,Etna,Vesuvius,Krakatoa,Fuji,Mauna,58
+Famous Opera Pieces,opera;theatre;music;performance;voice,Aria,Libretto,Overture,Finale,Recit,63
+Historic Libraries,library;books;archive;history;reading,Alexandria,Scriptorium,Stacks,Scroll,Index,56
+Celestial Objects,celestial;space;universe;astronomy;body,Planet,Star,Comet,Nebula,Galaxy,49
+World Mythologies,myth;legend;god;deity;folklore,Odin,Trickster,Thunder,Underworld,River,61
+Famous Violinists,violin;music;string;virtuoso;player,Strad,Concerto,Fiddle,Bow,Encore,53
+Classic Philosophies,philosophy;thought;school;theory;ethics,Stoic,Rational,Absurd,Dialectic,Forms,60
+Vintage Television,tv;television;retro;series;channel,Tuner,BlackWhite,Antenna,Rerun,Pilot,42
+Famous Rivers,river;water;flow;stream;channel,Amazon,Nile,Danube,Ganges,Mississippi,40
+Orchestral Sections,orchestra;music;instruments;ensemble;classical,Brass,Strings,Woodwind,Percussion,Conductor,51
+Important Pharaohs,pharaoh;egypt;ancient;king;dynasty,Pyramid,Valley,Gold,Tomb,Nile,57
+Historical Sports,sport;history;competition;old;game,Chariot,Pankration,Coliseum,Shield,Olympics,47
+Famous Short Stories,story;short;literature;tale;fiction,Masque,Lottery,Usher,Hills,Algernon,45
+Cult Classic Films,film;movie;cinema;cult;classic,Cult,Midnight,Bizarre,Indie,Reel,48
+Retro Arcade Games,arcade;game;retro;coin;video,Pixel,Maze,Barrel,Blip,Alien,39
+Historical Paintings,paint;art;canvas;history;masterwork,Guernica,Waterlilies,GirlPearl,Persistence,Lunch,58
+Famous Mathematicians,math;numbers;theory;equation;geometry,Calculus,Prime,Proof,Infinity,Curve,64
+Exotic Animals,animal;creature;exotic;wild;fauna,Okapi,Axolotl,Liger,Echidna,Capybara,50
+Ancient Monuments,monument;stone;ancient;structure;site,Stonehenge,Moai,Temple,Pillar,Sphinx,52
+Royal Dynasties,royal;dynasty;noble;kingdom;rule,Tudor,Bourbon,Habsburg,Stuart,Hanover,61
+Popular Spices,spice;flavor;cook;season;aroma,Cumin,Turmeric,Cardamom,Paprika,Nutmeg,37
+Winter Sports,winter;snow;sport;ice;cold,Slalom,Luge,Curling,Bobsled,Hockey,41
+Carnival Attractions,carnival;fair;attraction;ride;festival,Carousel,Funhouse,Midway,Ferris,Clown,44
+Famous Sculptors,sculptor;art;marble;chisel;create,Rodin,Bernini,Donatello,Canova,Brancusi,55
+Exotic Dances,dance;folk;tradition;exotic;movement,Fandango,Hula,Capoeira,Tarantella,Khaleegy,46
+Lost Civilizations,civil;lost;tribe;ancient;ruin,Atlantis,Mu,Lemuria,Camelot,Eldorado,65
+Famous Battlefields,battle;war;field;history;military,Hastings,Gettysburg,Waterloo,Agincourt,Somme,59
+Classic Monsters,monster;myth;legend;creature;fiction,Dracula,Frankenstein,Kraken,Werewolf,Hydra,54
+Renaissance Masters,art;renaissance;master;paint;sculpt,Leo,Michelangelo,Raphael,Donato,Venus,60
+Folk Instruments,folk;instrument;music;traditional;play,Banjo,Accordion,Panpipe,Sitar,Viola,43
+Viking Mythology,myth;viking;norse;legend;god,Odin,Thor,Mjolnir,Valhalla,Midgard,62
+Superstitious Omens,superstition;omen;sign;belief;luck,Raven,Mirror,Black,Spill,13,49
+Time Travel Stories,time;travel;fiction;chronology;history,Paradox,Portal,Timeline,DeLorean,Chrono,58
+Famous Keyboardists,keyboard;music;piano;organ;synth,Elton,Billy,Hammond,Rhodes,Wonder,50
+Popular Noodles,noodle;food;asian;pasta;wheat,Ramen,Udon,Soba,Rice,Glass,36
+Dystopian Novels,dystopia;fiction;future;oppress;society,Orwell,Huxley,Fahrenheit,Maze,District,57
+Golden Age Comics,comic;age;superhero;vintage;issue,Issue,Cowl,Panel,Radioactive,Detective,52
+Famous Pilots,pilot;aviation;flight;airplane;fly,Amelia,Chuck,Concorde,Sully,Spirit,47
+Classic Ballets,ballet;dance;theatre;classical;performance,Giselle,Swan,Lake,Nutcracker,DonQuixote,55
+Endangered Species,species;animal;endangered;wild;rare,Panda,Rhino,Orangutan,Vaquita,Tiger,48
+Futuristic Tech,tech;future;innovation;device;advanced,Hologram,Drone,Hyperloop,AI,Quantum,60
+Country Nicknames,country;nation;nickname;land;label,Nippon,Albion,Gaul,DownUnder,Motherland,46
+Mythic Reptiles,reptile;myth;creature;legend;scales,Dragon,Wyvern,Leviathan,Basilisk,Wurm,53
+Desert Flowers,desert;flower;arid;bloom;plant,Cactus,Agave,Ocotillo,Prickly,Aloe,35
+Historic Prisons,prison;history;fortress;captivity;cell,Alcatraz,Tower,Island,Chain,Gulag,58
+Steampunk Gadgets,steam;punk;retro;gadget;gear,Valve,Cog,Goggle,Brass,Boiler,44
+Martial Arts Styles,martial;art;fight;combat;style,Karate,Taekwondo,Muay,Choke,Kendo,50
+Famous Witches,witch;magic;female;sorcery;spell,Broom,Cauldron,Hansel,Salem,Hag,42
+Retro Cameras,camera;photo;vintage;film;shoot,Polaroid,Flash,Zoom,Roll,Develop,37
+Exotic Birds,bird;avian;exotic;wild;winged,Toucan,Hornbill,Peacock,Cassowary,Lorikeet,43
+Historic Castles,castle;fort;stronghold;fortress;medieval,Moat,Turret,Gatehouse,Keep,Rampart,56
+Fairytale Creatures,fairy;myth;creature;fantasy;folk,Gnome,Troll,Elf,Sprite,Ogre,54
+Art Nouveau Artists,art;nouveau;style;decorative;modern,Whiplash,Poster,Iris,Glasgow,Ornament,57
+Famous Cheese Dishes,cheese;food;culinary;meal;melt,Fondue,Raclette,Mac,Lazuli,Queso,39
+Historic Shipwrecks,ship;wreck;maritime;sunken;sea,Titanic,Bismarck,Spanish,Gold,Scuttled,59
+Star Constellations,star;constellation;night;sky;astronomy,Orion,Ursa,Cassiopeia,Draco,Crux,61
+Martial Arts Weapons,martial;weapon;combat;fight;defense,Sai,Katana,Nunchaku,Bo,Throwing,52
+Popular Baking Styles,bake;oven;pastry;bread;dessert,Fold,Prove,Whisk,Cream,Piping,38
+Famous Mascots,mascot;logo;brand;character;icon,Tony,Gecko,Bunny,Colonel,Clown,45
+Foreign Greetings,hello;foreign;language;greet;speak,Ciao,Hola,Salut,Konnichiwa,Annyeong,35
+Classic Fairy Tales,fairy;tale;story;folk;magic,Red,Ball,Beanstalk,Spindle,Dwarfs,41
+Carnivorous Plants,plant;carnivore;insect;trap;biology,Venus,Pitcher,Snap,Sundew,Bladder,48
+Iconic Skyscrapers,sky;scrape;tower;building;architecture,Empire,Burj,Willis,Twin,Shard,53
+Magic Schools,magic;school;wizard;academy;spell,Spellbook,Broomstick,Crystal,House,Enchanted,57
+Legendary Dragons,dragon;legend;myth;scales;fire,Smaug,Toothless,Reign,Wyvern,Fafnir,50
+Rare Gemstones,gem;stone;crystal;rare;precious,Opal,Bixbite,Tanzanite,Alexandrite,Paraiba,55
+Urban Legends,urban;legend;myth;story;modern,Hook,Alligator,Bloody,Vanishing,Rat,60
+Famous Autobiographies,auto;bio;memoir;life;author,Diary,Story,LongWalk,Malcolm,Unbroken,46
+Revolutionary Leaders,leader;revolt;revolution;change;uprising,Che,Bolivar,Lenin,Mandela,Hidalgo,58
+Historic Parliaments,parliament;gov;legislate;building;represent,Duma,Commons,Diet,Senate,Knesset,43
+Spiritual Practices,spirit;practice;ritual;faith;inner,Chakra,Mantra,Pilgrim,Temple,Yoga,51
+Art Deco Designs,art;deco;style;design;architect,Chevron,Geometric,Sunburst,Chrome,Monolith,56
+Famous Explorations,explore;adventure;journey;voyage;discover,Conquistador,Nautical,Strait,Compass,Trade,54
+Historical Dramas,drama;film;theatre;historical;period,Corset,Ballroom,Banner,Duel,Coronation,42
+Venomous Creatures,venom;poison;animal;bite;toxin,Fang,Scorpion,Anemone,Asp,Stonefish,63
+Retro Dances,dance;retro;old;music;movement,Charleston,Swing,Disco,Polka,Twist,39
+Famous Sagas,saga;epic;myth;legend;story,Ring,Throne,Doom,Winter,King,60
+Opera Houses,opera;house;theatre;music;venue,Met,Sydney,LaScala,Covent,Garnier,49
+Famous Pirates,pirate;sea;ship;treasure;privateer,Hook,Barbossa,Blackbeard,Rackham,Galleon,44
+Iconic Mobsters,mob;mafia;gangster;crime;underworld,Capon,Bugsy,Alley,Godfather,Donnie,59
+Important Catastrophes,disaster;catastrophe;event;crisis;history,Tsunami,Plague,Flood,Inferno,Outbreak,55
+Famous Duels,duel;combat;challenge;swords;historic,Hamilton,Burr,Pistol,Honor,Seconds,52
+Notable Greenhouses,green;house;botanical;plant;glass,Kew,Eden,Conservatory,Botanic,Hothouse,36
+Enduring Mysteries,mystery;unknown;enigmatic;strange;puzzle,Atlantis,Zodiac,Voynich,Loch,Bermuda,65
+Historic Observatories,observe;astronomy;building;science;sky,Griffith,Greenwich,Mount,Paranal,Radio,58
+Beach Activities,beach;sand;sea;coast;outdoor,Towel,Surf,Volley,Castles,Shell,35
+Prehistoric Creatures,prehistoric;dinosaur;fossil;ancient;beast,T-Rex,Triceratops,Stego,Saber,Raptor,50
+Astral Beliefs,astral;belief;spiritual;cosmos;esoteric,Zodiac,Birth,Transit,Cusp,Houses,62
+Inspiring Inventors,invent;creation;innovate;patent;discover,Gutenberg,Bell,Tesla,Edison,Musk,46
+Underground Places,underground;cave;mine;tunnel;burrow,Subway,Lair,Chamber,Bunker,Cavern,48
+Cyberpunk Settings,cyber;punk;futuristic;urban;tech,Neon,Implant,Sprawl,Jack,Console,57
+Ghost Towns,ghost;town;abandoned;deserted;place,Saloon,Dust,Mine,Wagon,Eerie,53
+Famous Surnames,surname;family;name;last;title,Smith,Williams,Garcia,Johnson,Kowalski,40
+Open-World Games,open;world;game;sandbox;quest,RPG,Mount,Craft,Exploration,Fetch,45
+Space Stations,space;station;orbit;astronaut;module,Mir,Skylab,Columbus,Zarya,Kibo,54
+Pioneer Aviators,aviator;pilot;plane;flight;early,Sopwith,Spirit,Glenn,Flier,Jenny,37
+Samurai Culture,samurai;warrior;japan;feudal;code,Bushido,Daimyo,Katana,Clan,Ronin,60
+Famous Libraries,library;books;reading;knowledge;archive,Alexandria,Library,Stacks,Congress,Bodleian,44
+River Transport,river;transport;boat;ship;water,Barge,Ferry,Tug,Keel,Current,39
+Historic Protests,protest;movement;rally;historic;civil,March,Boycott,Strike,Occupy,Demo,52
+Exotic Reptiles,reptile;animal;exotic;scale;wild,Chameleon,Iguana,Monitor,Basilisk,Gecko,41
+Famous Duos,duo;pair;partners;double;twosome,Peanut,Bonnie,Clyde,Bert,Ernie,43
+Popular String Instruments,string;music;instrument;pluck;bow,Harp,Banjo,Cello,Violin,Ukulele,36
+Legendary Heroes,hero;legend;myth;champion;folk,Robin,Arthur,Hercules,Achilles,Beowulf,55
+Victorian Fashion,victorian;fashion;era;clothes;dress,Crinoline,Corset,Bustle,Bonnet,Petticoat,58
+Famous Painters,paint;artist;canvas;brush;famous,DaVinci,VanGogh,Rembrandt,Frida,Picasso,50
+Space Telescopes,space;telescope;orbit;observe;astronomy,Hubble,Webb,Spitzer,Kepler,Chandra,62
+Modern Architects,architect;building;design;modern;structure,Frank,Glass,Steel,Concrete,Wright,47
+Famous Philosophies,philosophy;theory;school;thought;ideas,Stoic,Nihilism,Taoism,Pragmatic,Exist,61
+Historic Car Races,car;race;auto;historic;motorsport,LeMans,Targa,Indianapolis,Silverstone,Monaco,56
+Popular Game Consoles,game;console;video;play;system,Switch,PlayStation,Xbox,Dreamcast,Genesis,42
+World Dances,dance;folk;traditional;culture;step,Hula,Salsa,Tango,Ceili,Bhangra,46
+Historic Swordsmen,sword;duel;historic;knight;samurai,Templar,Ronin,Musketeer,Buccaneer,Kendo,49
+Film Noir Classics,film;noir;movie;cinema;crime,Femme,Shadow,Lamp,City,Detective,55
+Famous Pizzerias,pizza;food;italian;restaurant;dough,Neapolitan,Slice,Brick,Oven,Marinara,35
+Undersea Ruins,undersea;ruin;sunken;lost;marine,Temple,Pillar,Coral,Statue,Sunlight,57
+Exotic Religions,faith;religion;belief;cult;exotic,Shinto,Jain,Sikh,Zen,Baha,59
+Mystery Series,mystery;series;detective;clue;crime,Baker,Poirot,Christie,Cluedo,Marple,45
+Modern Dance Styles,dance;modern;movement;choreo;performance,HipHop,Contemporary,Lyric,Street,Break,40
+Paper Crafts,paper;craft;origami;fold;handmade,Crane,Quill,Card,Crease,Paste,38
+Famous Show Hosts,show;host;tv;talk;presenter,Letterman,Oprah,Conan,Ellen,Fallon,53
+Epic Poets,epic;poet;verse;literature;long,Virgil,Dante,Milton,Homer,Spiral,52
+Notable Alliances,ally;alliance;union;treaty;group,NATO,Pact,Entente,Block,League,60
+Children’s Authors,kid;child;author;book;literature,Dahl,Blyton,Seuss,Rowling,Barrie,42
+Famous Dancers,dancer;choreo;performance;stage;movement,Astaire,Rogers,Baryshnikov,Coppelia,Isadora,54
+Underwater Life,underwater;sea;marine;life;fish,Coral,Anemone,Crab,Turtle,Eel,39
+Mythical Birds,bird;myth;legend;winged;creature,Phoenix,Roc,Thunder,Firebird,Simurgh,63
+Street Foods,street;food;vendor;snack;fast,Hotdog,Taco,Crepe,Satay,Kebab,35
+Historic Heists,heist;robbery;theft;historic;crime,Train,Casino,Museum,Bank,Louvre,58
+Folklore Giants,giant;folk;myth;legend;large,Troll,Ogre,Jotunn,Colossus,Titan,50
+Famous Pasta Dishes,pasta;italian;food;meal;dish,Marinara,Carbonara,Alfredo,Puttanesca,Lasagna,36
+Art Techniques,art;technique;create;medium;style,Fresco,Etching,Litho,Impasto,Stencil,45
+Medieval Instruments,medieval;music;instrument;historical;folk,Lute,Fiddle,Hurdy,Pipe,Harp,43
+Crucial Battles,battle;war;conflict;historic;clash,Gettysburg,Hastings,Waterloo,Midway,Trench,61
+Famous Marketplaces,market;place;bazaar;trade;shopping,Grand,Borough,Souk,Dongdaemun,Flower,48
+Iconic Riffs,guitar;riff;music;rock;track,Hendrix,Smoke,Zeppelin,Metal,Pentatonic,52
+Historic Plagues,plague;disease;pandemic;outbreak;history,Black,Spanish,Justinian,Smallpox,Cholera,64
+Impressionist Painters,paint;art;impress;canvas;style,Monet,Manet,Degas,Renoir,Cassatt,51
+Famous Woodwinds,woodwind;instrument;orchestra;music;reed,Flute,Clarinet,Oboe,Bassoon,Sax,44
+Historic Islands,island;land;history;sea;archipelago,Crete,Zanzibar,Iceland,Sicily,Bermuda,42
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Basketball Player Nicknames,legends;basketball;nba;nickname;nicknames,Chef,Mailman,Diesel,Chosen One,Uncle Drew,55
+Famous Cartoon Dogs,cartoon;dogs;dog;character,Brian,Odie,Clifford,Scooby,Snoopy,50
+Famous Steves,steve;steph,Lacy,Young,Jobs,Nash,Harvey,54
+Super Bowl Halftime Performers,nfl;football;performer;performers;half;time,Snoop Dogg,Rihanna,The Weeknd,Michael Jackson,Bruno Mars,49
+International Airlines,air;plane;fly;airline;airlines;travel;flight,Lufthansa,Emirates,Delta,Qantas,Air Canada,37
+Words That Follow "Hot",hot,Wire,Seat,Spot,Shot,Dog,59
+Decision-Making Bodies,decision;group;committee;roles;law;school;business;corp;comp;academic;judicial;admin;gov;meet,Chair,Bench,Table,Board,Panel,64
+Words That Follow "Gold",gold,Digger,Rush,Coin,Standard,Medal,55
+Winter Olympic Sports,cold;winter;olympic;olympics;sport;sports,Figure Skating,Bobsleigh,Ski Jumping,Ice Hockey,Curling,40
+Famous Landmarks,land;mark;place;monument;site,Eiffel,Pyramids,Clock,Torch,Mount,55
+Classic Inventions,invent;inventor;discovery;device;creation,Lightbulb,Penicillin,Wheel,Camera,Radio,50
+Iconic Bridges,bridge;span;overpass;structure;cross,Golden,Tower,Suspension,Arch,River,52
+Legendary Swords,sword;blade;weapon;knight;arm,Excalibur,Masamune,Claymore,Katana,Frost,58
+Historic Explorers,explorer;travel;voyage;adventure;discover,Compass,Sail,Spice,Map,America,53
+Popular Chocolates,choc;chocolate;candy;bar;sweet,Fudge,Truffle,Cocoa,Caramel,Wafer,47
+Famous Scientists,science;scientist;research;theory;lab,Gravity,Evolution,E=mc2,Germ,Polio,60
+Comic Superteams,comic;team;hero;group;league,Avenger,Justice,Fantastic,Titan,Guardians,54
+Timeless Paintings,paint;art;canvas;gallery;masterpiece,Mona,Starry,Guernica,Persistence,Water,56
+Renaissance Artists,artist;paint;sculpt;revival;humanism,Leo,Rafa,Venus,David,Chapel,61
+Space Missions,space;rocket;launch;orbit;mission,Apollo,Shuttle,Probe,ISS,Lander,58
+Famous Deserts,desert;sand;dune;arid;dry,Sahara,Gobi,Outback,Atacama,Sonoran,49
+Notable Philosophers,philo;think;ideas;wisdom;mind,Allegory,Ethics,Reason,Exist,Uber,63
+Famous Astronomers,astronomy;space;stars;observe;telescope,Retrograde,Helio,Comet,Ring,Moons,55
+Historic Wars,war;conflict;battle;military;history,Trench,Civil,Crusade,Invasion,Revolution,59
+Classic Novels,novel;book;story;literature;tale,Orwell,Whale,Scout,Scarlet,Expectations,44
+Greek Mythology,greek;myth;god;legend;ancient,Lightning,Underworld,Olive,Olympus,Gorgon,57
+Types of Pasta,pasta;noodle;italian;food;dish,Fettuccine,Spiral,Shell,Tube,Ravioli,37
+Famous Magicians,magic;illusion;trick;stage;perform,Houdini,Dove,Rabbit,Wand,Levitate,51
+Historical Empires,empire;realm;kingdom;ancient;dynasty,Roman,Ming,Inca,Ottoman,Persian,62
+Important Scientists,science;lab;discover;theory;research,Quantum,Vaccine,Relativity,Atom,Magnetism,60
+World Languages,lang;language;tongue;speak;words,English,Mandarin,Sign,Hindi,Arabic,46
+Oceanic Creatures,ocean;sea;marine;fish;creature,Reef,Krill,Current,Dorsal,Orca,43
+Famous Directors,direct;film;cinema;movie;filmmaker,Hitchcock,Spielberg,Coen,Scorsese,Tarantino,54
+Classic Video Games,game;gaming;arcade;retro;console,Pixel,Joystick,Coins,Plumber,Labyrinth,48
+Tropical Fruits,fruit;food;tropical;orchard;plant,Pineapple,Mango,Dragon,Passion,Guava,35
+Historic Documents,doc;document;manuscript;paper;record,Magna,Declaration,Constitution,Scroll,Patent,58
+Famous Lakes,lake;water;fresh;inland;body,Superior,Loch,Ontario,Titicaca,Victoria,42
+Olympic Events,olympic;games;sport;international;compete,Track,Mat,Podium,Rings,Torch,56
+Space Phenomena,space;cosmos;celestial;universe;phenomenon,Quasar,Black,Supernova,Meteor,Redshift,64
+Haunted Places,haunt;ghost;spooky;place;paranormal,Banshee,Eerie,Manor,Grave,Draft,50
+Famous Beaches,beach;coast;sand;shore;sea,Bondi,Waikiki,Driftwood,Bora,Tulum,38
+Iconic Festivals,fest;festival;celebrate;event;culture,Mask,Holi,Oktober,Chingay,Float,47
+Popular Board Games,board;game;family;strategy;fun,Colonist,Peg,Stacks,Hotels,Clue,39
+Famous Dog Breeds,dog;canine;breed;pet;animal,Retriever,Pug,Beagle,Hound,Bulldog,45
+Historical Figures,history;past;figure;leader;person,Reformer,Manifesto,Monarch,Revolutionary,Suffrage,57
+Famous Mountains,mountain;peak;range;summit;high,Kilimanjaro,Denali,Blanc,Fuji,Alps,53
+Iconic Sculptures,sculpt;statue;marble;art;carve,Marble,David,Pieta,Thinker,Venus,49
+Common Herbs,herb;spice;aroma;plant;cuisine,Parsley,Sage,Thyme,Basil,Oregano,34
+Famous Cheeses,cheese;dairy;milk;food;curd,Brie,Gouda,Feta,Cheddar,Edam,36
+Influential Musicians,music;musician;artist;composer;band,Beatle,Ziggy,Thriller,Diva,Maestro,55
+Famous Playwrights,play;theatre;drama;author;stage,Globe,Tragedy,Comedy,Verse,Fool,52
+Ancient Civilizations,civil;ancient;people;culture;past,Aztec,Maya,Harappa,Nile,Mediterranean,60
+Famous Poets,poem;poet;verse;literary;lyric,Sonnet,Quill,Stanza,Bard,Rhyme,44
+Popular Ice Creams,ice;cream;dessert;flavor;sweet,Vanilla,Rocky,Chunk,Swirl,Sunday,41
+Famous Airlines,air;plane;flight;travel;carrier,Delta,Qantas,Lufthansa,Emirates,ANA,37
+Historic Cathedrals,cathedral;church;religion;architecture;holy,Gothic,Spire,Chapel,Nave,Choir,59
+Famous Philosophers,philosophy;think;mind;ideas;theory,Reason,Ethics,Form,Superman,Absurd,62
+Popular Cocktails,cocktail;drink;bar;mix;alcohol,Mojito,Collins,Fizz,Twist,Rim,46
+Exotic Flowers,flower;botany;bloom;garden;plant,Orchid,Hibiscus,Canna,Lotus,Bird,43
+Notable Volcanoes,volcano;eruption;lava;geology;mount,Etna,Vesuvius,Krakatoa,Fuji,Mauna,58
+Famous Opera Pieces,opera;theatre;music;performance;voice,Aria,Libretto,Overture,Finale,Recit,63
+Historic Libraries,library;books;archive;history;reading,Alexandria,Scriptorium,Stacks,Scroll,Index,56
+Celestial Objects,celestial;space;universe;astronomy;body,Planet,Star,Comet,Nebula,Galaxy,49
+World Mythologies,myth;legend;god;deity;folklore,Odin,Trickster,Thunder,Underworld,River,61
+Famous Violinists,violin;music;string;virtuoso;player,Strad,Concerto,Fiddle,Bow,Encore,53
+Classic Philosophies,philosophy;thought;school;theory;ethics,Stoic,Rational,Absurd,Dialectic,Forms,60
+Vintage Television,tv;television;retro;series;channel,Tuner,BlackWhite,Antenna,Rerun,Pilot,42
+Famous Rivers,river;water;flow;stream;channel,Amazon,Nile,Danube,Ganges,Mississippi,40
+Orchestral Sections,orchestra;music;instruments;ensemble;classical,Brass,Strings,Woodwind,Percussion,Conductor,51
+Important Pharaohs,pharaoh;egypt;ancient;king;dynasty,Pyramid,Valley,Gold,Tomb,Nile,57
+Historical Sports,sport;history;competition;old;game,Chariot,Pankration,Coliseum,Shield,Olympics,47
+Famous Short Stories,story;short;literature;tale;fiction,Masque,Lottery,Usher,Hills,Algernon,45
+Cult Classic Films,film;movie;cinema;cult;classic,Cult,Midnight,Bizarre,Indie,Reel,48
+Retro Arcade Games,arcade;game;retro;coin;video,Pixel,Maze,Barrel,Blip,Alien,39
+Historical Paintings,paint;art;canvas;history;masterwork,Guernica,Waterlilies,GirlPearl,Persistence,Lunch,58
+Famous Mathematicians,math;numbers;theory;equation;geometry,Calculus,Prime,Proof,Infinity,Curve,64
+Exotic Animals,animal;creature;exotic;wild;fauna,Okapi,Axolotl,Liger,Echidna,Capybara,50
+Ancient Monuments,monument;stone;ancient;structure;site,Stonehenge,Moai,Temple,Pillar,Sphinx,52
+Royal Dynasties,royal;dynasty;noble;kingdom;rule,Tudor,Bourbon,Habsburg,Stuart,Hanover,61
+Popular Spices,spice;flavor;cook;season;aroma,Cumin,Turmeric,Cardamom,Paprika,Nutmeg,37
+Winter Sports,winter;snow;sport;ice;cold,Slalom,Luge,Curling,Bobsled,Hockey,41
+Carnival Attractions,carnival;fair;attraction;ride;festival,Carousel,Funhouse,Midway,Ferris,Clown,44
+Famous Sculptors,sculptor;art;marble;chisel;create,Rodin,Bernini,Donatello,Canova,Brancusi,55
+Exotic Dances,dance;folk;tradition;exotic;movement,Fandango,Hula,Capoeira,Tarantella,Khaleegy,46
+Lost Civilizations,civil;lost;tribe;ancient;ruin,Atlantis,Mu,Lemuria,Camelot,Eldorado,65
+Famous Battlefields,battle;war;field;history;military,Hastings,Gettysburg,Waterloo,Agincourt,Somme,59
+Classic Monsters,monster;myth;legend;creature;fiction,Dracula,Frankenstein,Kraken,Werewolf,Hydra,54
+Renaissance Masters,art;renaissance;master;paint;sculpt,Leo,Michelangelo,Raphael,Donato,Venus,60
+Folk Instruments,folk;instrument;music;traditional;play,Banjo,Accordion,Panpipe,Sitar,Viola,43
+Viking Mythology,myth;viking;norse;legend;god,Odin,Thor,Mjolnir,Valhalla,Midgard,62
+Superstitious Omens,superstition;omen;sign;belief;luck,Raven,Mirror,Black,Spill,13,49
+Time Travel Stories,time;travel;fiction;chronology;history,Paradox,Portal,Timeline,DeLorean,Chrono,58
+Famous Keyboardists,keyboard;music;piano;organ;synth,Elton,Billy,Hammond,Rhodes,Wonder,50
+Popular Noodles,noodle;food;asian;pasta;wheat,Ramen,Udon,Soba,Rice,Glass,36
+Dystopian Novels,dystopia;fiction;future;oppress;society,Orwell,Huxley,Fahrenheit,Maze,District,57
+Golden Age Comics,comic;age;superhero;vintage;issue,Issue,Cowl,Panel,Radioactive,Detective,52
+Famous Pilots,pilot;aviation;flight;airplane;fly,Amelia,Chuck,Concorde,Sully,Spirit,47
+Classic Ballets,ballet;dance;theatre;classical;performance,Giselle,Swan,Lake,Nutcracker,DonQuixote,55
+Endangered Species,species;animal;endangered;wild;rare,Panda,Rhino,Orangutan,Vaquita,Tiger,48
+Futuristic Tech,tech;future;innovation;device;advanced,Hologram,Drone,Hyperloop,AI,Quantum,60
+Country Nicknames,country;nation;nickname;land;label,Nippon,Albion,Gaul,DownUnder,Motherland,46
+Mythic Reptiles,reptile;myth;creature;legend;scales,Dragon,Wyvern,Leviathan,Basilisk,Wurm,53
+Desert Flowers,desert;flower;arid;bloom;plant,Cactus,Agave,Ocotillo,Prickly,Aloe,35
+Historic Prisons,prison;history;fortress;captivity;cell,Alcatraz,Tower,Island,Chain,Gulag,58
+Steampunk Gadgets,steam;punk;retro;gadget;gear,Valve,Cog,Goggle,Brass,Boiler,44
+Martial Arts Styles,martial;art;fight;combat;style,Karate,Taekwondo,Muay,Choke,Kendo,50
+Famous Witches,witch;magic;female;sorcery;spell,Broom,Cauldron,Hansel,Salem,Hag,42
+Retro Cameras,camera;photo;vintage;film;shoot,Polaroid,Flash,Zoom,Roll,Develop,37
+Exotic Birds,bird;avian;exotic;wild;winged,Toucan,Hornbill,Peacock,Cassowary,Lorikeet,43
+Historic Castles,castle;fort;stronghold;fortress;medieval,Moat,Turret,Gatehouse,Keep,Rampart,56
+Fairytale Creatures,fairy;myth;creature;fantasy;folk,Gnome,Troll,Elf,Sprite,Ogre,54
+Art Nouveau Artists,art;nouveau;style;decorative;modern,Whiplash,Poster,Iris,Glasgow,Ornament,57
+Famous Cheese Dishes,cheese;food;culinary;meal;melt,Fondue,Raclette,Mac,Lazuli,Queso,39
+Historic Shipwrecks,ship;wreck;maritime;sunken;sea,Titanic,Bismarck,Spanish,Gold,Scuttled,59
+Star Constellations,star;constellation;night;sky;astronomy,Orion,Ursa,Cassiopeia,Draco,Crux,61
+Martial Arts Weapons,martial;weapon;combat;fight;defense,Sai,Katana,Nunchaku,Bo,Throwing,52
+Popular Baking Styles,bake;oven;pastry;bread;dessert,Fold,Prove,Whisk,Cream,Piping,38
+Famous Mascots,mascot;logo;brand;character;icon,Tony,Gecko,Bunny,Colonel,Clown,45
+Foreign Greetings,hello;foreign;language;greet;speak,Ciao,Hola,Salut,Konnichiwa,Annyeong,35
+Classic Fairy Tales,fairy;tale;story;folk;magic,Red,Ball,Beanstalk,Spindle,Dwarfs,41
+Carnivorous Plants,plant;carnivore;insect;trap;biology,Venus,Pitcher,Snap,Sundew,Bladder,48
+Iconic Skyscrapers,sky;scrape;tower;building;architecture,Empire,Burj,Willis,Twin,Shard,53
+Magic Schools,magic;school;wizard;academy;spell,Spellbook,Broomstick,Crystal,House,Enchanted,57
+Legendary Dragons,dragon;legend;myth;scales;fire,Smaug,Toothless,Reign,Wyvern,Fafnir,50
+Rare Gemstones,gem;stone;crystal;rare;precious,Opal,Bixbite,Tanzanite,Alexandrite,Paraiba,55
+Urban Legends,urban;legend;myth;story;modern,Hook,Alligator,Bloody,Vanishing,Rat,60
+Famous Autobiographies,auto;bio;memoir;life;author,Diary,Story,LongWalk,Malcolm,Unbroken,46
+Revolutionary Leaders,leader;revolt;revolution;change;uprising,Che,Bolivar,Lenin,Mandela,Hidalgo,58
+Historic Parliaments,parliament;gov;legislate;building;represent,Duma,Commons,Diet,Senate,Knesset,43
+Spiritual Practices,spirit;practice;ritual;faith;inner,Chakra,Mantra,Pilgrim,Temple,Yoga,51
+Art Deco Designs,art;deco;style;design;architect,Chevron,Geometric,Sunburst,Chrome,Monolith,56
+Famous Explorations,explore;adventure;journey;voyage;discover,Conquistador,Nautical,Strait,Compass,Trade,54
+Historical Dramas,drama;film;theatre;historical;period,Corset,Ballroom,Banner,Duel,Coronation,42
+Venomous Creatures,venom;poison;animal;bite;toxin,Fang,Scorpion,Anemone,Asp,Stonefish,63
+Retro Dances,dance;retro;old;music;movement,Charleston,Swing,Disco,Polka,Twist,39
+Famous Sagas,saga;epic;myth;legend;story,Ring,Throne,Doom,Winter,King,60
+Opera Houses,opera;house;theatre;music;venue,Met,Sydney,LaScala,Covent,Garnier,49
+Famous Pirates,pirate;sea;ship;treasure;privateer,Hook,Barbossa,Blackbeard,Rackham,Galleon,44
+Iconic Mobsters,mob;mafia;gangster;crime;underworld,Capon,Bugsy,Alley,Godfather,Donnie,59
+Important Catastrophes,disaster;catastrophe;event;crisis;history,Tsunami,Plague,Flood,Inferno,Outbreak,55
+Famous Duels,duel;combat;challenge;swords;historic,Hamilton,Burr,Pistol,Honor,Seconds,52
+Notable Greenhouses,green;house;botanical;plant;glass,Kew,Eden,Conservatory,Botanic,Hothouse,36
+Enduring Mysteries,mystery;unknown;enigmatic;strange;puzzle,Atlantis,Zodiac,Voynich,Loch,Bermuda,65
+Historic Observatories,observe;astronomy;building;science;sky,Griffith,Greenwich,Mount,Paranal,Radio,58
+Beach Activities,beach;sand;sea;coast;outdoor,Towel,Surf,Volley,Castles,Shell,35
+Prehistoric Creatures,prehistoric;dinosaur;fossil;ancient;beast,T-Rex,Triceratops,Stego,Saber,Raptor,50
+Astral Beliefs,astral;belief;spiritual;cosmos;esoteric,Zodiac,Birth,Transit,Cusp,Houses,62
+Inspiring Inventors,invent;creation;innovate;patent;discover,Gutenberg,Bell,Tesla,Edison,Musk,46
+Underground Places,underground;cave;mine;tunnel;burrow,Subway,Lair,Chamber,Bunker,Cavern,48
+Cyberpunk Settings,cyber;punk;futuristic;urban;tech,Neon,Implant,Sprawl,Jack,Console,57
+Ghost Towns,ghost;town;abandoned;deserted;place,Saloon,Dust,Mine,Wagon,Eerie,53
+Famous Surnames,surname;family;name;last;title,Smith,Williams,Garcia,Johnson,Kowalski,40
+Open-World Games,open;world;game;sandbox;quest,RPG,Mount,Craft,Exploration,Fetch,45
+Space Stations,space;station;orbit;astronaut;module,Mir,Skylab,Columbus,Zarya,Kibo,54
+Pioneer Aviators,aviator;pilot;plane;flight;early,Sopwith,Spirit,Glenn,Flier,Jenny,37
+Samurai Culture,samurai;warrior;japan;feudal;code,Bushido,Daimyo,Katana,Clan,Ronin,60
+Famous Libraries,library;books;reading;knowledge;archive,Alexandria,Library,Stacks,Congress,Bodleian,44
+River Transport,river;transport;boat;ship;water,Barge,Ferry,Tug,Keel,Current,39
+Historic Protests,protest;movement;rally;historic;civil,March,Boycott,Strike,Occupy,Demo,52
+Exotic Reptiles,reptile;animal;exotic;scale;wild,Chameleon,Iguana,Monitor,Basilisk,Gecko,41
+Famous Duos,duo;pair;partners;double;twosome,Peanut,Bonnie,Clyde,Bert,Ernie,43
+Popular String Instruments,string;music;instrument;pluck;bow,Harp,Banjo,Cello,Violin,Ukulele,36
+Legendary Heroes,hero;legend;myth;champion;folk,Robin,Arthur,Hercules,Achilles,Beowulf,55
+Victorian Fashion,victorian;fashion;era;clothes;dress,Crinoline,Corset,Bustle,Bonnet,Petticoat,58
+Famous Painters,paint;artist;canvas;brush;famous,DaVinci,VanGogh,Rembrandt,Frida,Picasso,50
+Space Telescopes,space;telescope;orbit;observe;astronomy,Hubble,Webb,Spitzer,Kepler,Chandra,62
+Modern Architects,architect;building;design;modern;structure,Frank,Glass,Steel,Concrete,Wright,47
+Famous Philosophies,philosophy;theory;school;thought;ideas,Stoic,Nihilism,Taoism,Pragmatic,Exist,61
+Historic Car Races,car;race;auto;historic;motorsport,LeMans,Targa,Indianapolis,Silverstone,Monaco,56
+Popular Game Consoles,game;console;video;play;system,Switch,PlayStation,Xbox,Dreamcast,Genesis,42
+World Dances,dance;folk;traditional;culture;step,Hula,Salsa,Tango,Ceili,Bhangra,46
+Historic Swordsmen,sword;duel;historic;knight;samurai,Templar,Ronin,Musketeer,Buccaneer,Kendo,49
+Film Noir Classics,film;noir;movie;cinema;crime,Femme,Shadow,Lamp,City,Detective,55
+Famous Pizzerias,pizza;food;italian;restaurant;dough,Neapolitan,Slice,Brick,Oven,Marinara,35
+Undersea Ruins,undersea;ruin;sunken;lost;marine,Temple,Pillar,Coral,Statue,Sunlight,57
+Exotic Religions,faith;religion;belief;cult;exotic,Shinto,Jain,Sikh,Zen,Baha,59
+Mystery Series,mystery;series;detective;clue;crime,Baker,Poirot,Christie,Cluedo,Marple,45
+Modern Dance Styles,dance;modern;movement;choreo;performance,HipHop,Contemporary,Lyric,Street,Break,40
+Paper Crafts,paper;craft;origami;fold;handmade,Crane,Quill,Card,Crease,Paste,38
+Famous Show Hosts,show;host;tv;talk;presenter,Letterman,Oprah,Conan,Ellen,Fallon,53
+Epic Poets,epic;poet;verse;literature;long,Virgil,Dante,Milton,Homer,Spiral,52
+Notable Alliances,ally;alliance;union;treaty;group,NATO,Pact,Entente,Block,League,60
+Children’s Authors,kid;child;author;book;literature,Dahl,Blyton,Seuss,Rowling,Barrie,42
+Famous Dancers,dancer;choreo;performance;stage;movement,Astaire,Rogers,Baryshnikov,Coppelia,Isadora,54
+Underwater Life,underwater;sea;marine;life;fish,Coral,Anemone,Crab,Turtle,Eel,39
+Mythical Birds,bird;myth;legend;winged;creature,Phoenix,Roc,Thunder,Firebird,Simurgh,63
+Street Foods,street;food;vendor;snack;fast,Hotdog,Taco,Crepe,Satay,Kebab,35
+Historic Heists,heist;robbery;theft;historic;crime,Train,Casino,Museum,Bank,Louvre,58
+Folklore Giants,giant;folk;myth;legend;large,Troll,Ogre,Jotunn,Colossus,Titan,50
+Famous Pasta Dishes,pasta;italian;food;meal;dish,Marinara,Carbonara,Alfredo,Puttanesca,Lasagna,36
+Art Techniques,art;technique;create;medium;style,Fresco,Etching,Litho,Impasto,Stencil,45
+Medieval Instruments,medieval;music;instrument;historical;folk,Lute,Fiddle,Hurdy,Pipe,Harp,43
+Crucial Battles,battle;war;conflict;historic;clash,Gettysburg,Hastings,Waterloo,Midway,Trench,61
+Famous Marketplaces,market;place;bazaar;trade;shopping,Grand,Borough,Souk,Dongdaemun,Flower,48
+Iconic Riffs,guitar;riff;music;rock;track,Hendrix,Smoke,Zeppelin,Metal,Pentatonic,52
+Historic Plagues,plague;disease;pandemic;outbreak;history,Black,Spanish,Justinian,Smallpox,Cholera,64
+Impressionist Painters,paint;art;impress;canvas;style,Monet,Manet,Degas,Renoir,Cassatt,51
+Famous Woodwinds,woodwind;instrument;orchestra;music;reed,Flute,Clarinet,Oboe,Bassoon,Sax,44
+Historic Islands,island;land;history;sea;archipelago,Crete,Zanzibar,Iceland,Sicily,Bermuda,42
