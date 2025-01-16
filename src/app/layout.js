@@ -40,7 +40,22 @@ export const metadata = {
   icons: {
     icon: "https://milad-mehri.github.io/pinpoint/favicon.ico",
   },
+  keywords: [
+    "category guessing game",
+    "Pinpoint",
+    "linkedin games",
+    "trivia game",
+    "knowledge challenge",
+    "intuitive guessing",
+    "pinpoint LinkedIn",
+    "category clues",
+    "word guessing game",
+    "engaging games",
+    "guess the category",
+    "online trivia game"
+  ],
 };
+
 
 export default function RootLayout({ children }) {
   return (
