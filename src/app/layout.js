@@ -20,10 +20,10 @@ export const metadata = {
     title: "Pinpoint - The Ultimate Category Guessing Game",
     description:
       "Test your knowledge and intuition in Pinpoint! Can you guess the correct category from the clues? Join the fun now!",
-    url: "https://milad-mehri.github.io/pinpoint/",
+    url: "https://pinpointpuzzle.netlify.app",
     images: [
       {
-        url: "https://milad-mehri.github.io/pinpoint/example2.gif",
+        url: "https://pinpointpuzzle.netlify.app/example2.gif",
         width: 1200,
         height: 630,
         alt: "Pinpoint - The Ultimate Category Guessing Game",
@@ -35,10 +35,10 @@ export const metadata = {
     title: "Pinpoint - The Ultimate Category Guessing Game",
     description:
       "Dive into the fun of Pinpoint! Guess the categories, test your wits, and share the challenge with friends.",
-    images: ["https://milad-mehri.github.io/pinpoint/example2.gif"],
+    images: ["https://pinpointpuzzle.netlify.app/example2.gif"],
   },
   icons: {
-    icon: "https://milad-mehri.github.io/pinpoint/favicon.ico",
+    icon: "https://pinpointpuzzle.netlify.app/favicon.ico",
   },
   keywords: [
     "category guessing game",
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-LXN713BY75', {
-        cookie_domain: 'milad-mehri.github.io', // Your GitHub Pages domain
+        cookie_domain: 'pinpointpuzzle.netlify.app', // Your GitHub Pages domain
         cookie_flags: 'SameSite=None;Secure'   // Ensures cookie compatibility for HTTPS
       });
     `}

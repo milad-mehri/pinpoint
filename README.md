@@ -20,7 +20,7 @@ Here’s a sneak peek of the game in action:
 ---
 
 ## 🚀 How to Play
-1. **Visit the game**: [Pinpoint Daily](https://milad-mehri.github.io/pinpoint/)
+1. **Visit the game**: [Pinpoint Daily](https://pinpointpuzzle.netlify.app)
 2. **Start guessing**: Use the clues provided to figure out the hidden category.
 3. **Challenge yourself**: Try to solve puzzles faster and with fewer guesses!
 
