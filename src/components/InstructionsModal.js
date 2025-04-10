@@ -71,18 +71,19 @@ const InstructionsModal = ({ onClose }) => {
           rel="noopener noreferrer"
         >
           Contact
-        </Link><span>, </span> 
+        </Link>
+        <span>, </span>
         <Link
           href="https://github.com/milad-mehri/pinpoint/"
           className="text-sm text-blue-800 font-extrabold hover:underline"
           target="_blank"
           rel="noopener noreferrer"
         >
-           Github
+          Github
         </Link>
 
         {/* Navigation Buttons
-        <div className="flex justify-center gap-4">
+        <div className="flex justif y-center gap-4">
           <Link
             href="/"
             onClick={onClose}

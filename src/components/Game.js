@@ -11,6 +11,7 @@ import {
   faArrowRight,
   faDumbbell,
   faCalendarDay,
+  faExclamationTriangle
 } from "@fortawesome/free-solid-svg-icons";
 
 const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
@@ -339,7 +340,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
             {/* Next and Share Buttons */}
             <div className="flex justify-center mt-6 gap-4">
               {/* Share Button */}
-              {/* Share Button */}
+
               <button
                 title="Share"
                 onClick={handleShare}
@@ -347,10 +348,18 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
               >
                 <FontAwesomeIcon icon={faShareAlt} className="text-xl" />{" "}
               </button>
+              <button
+                  title="Daily mode"
+                  onClick={() => (window.location.href = "/feedback")} // Replace with navigation logic if needed
+                  className="bg-gray-100 hover:bg-gray-200 text-gray-500 w-14 h-9 rounded-full flex items-center justify-center shadow-md transition"
+                >
+                  <FontAwesomeIcon icon={faExclamationTriangle} className="text-xl" />{" "}
+                </button>
+
               {mode === "practice" && (
                 <button
                   title="Daily mode"
-                  onClick={() => (window.location.href = "/pinpoint")} // Replace with navigation logic if needed
+                  onClick={() => (window.location.href = "/")} // Replace with navigation logic if needed
                   className="bg-gray-100 hover:bg-gray-200 text-gray-500 w-14 h-9 rounded-full flex items-center justify-center shadow-md transition"
                 >
                   <FontAwesomeIcon icon={faCalendarDay} className="text-xl" />{" "}
