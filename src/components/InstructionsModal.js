@@ -82,7 +82,7 @@ const InstructionsModal = ({ onClose }) => {
           Github
         </Link>
 
-        {/* Navigation Buttons
+        {/*    Navigation Buttons
         <div className="flex justif y-center gap-4">
           <Link
             href="/"
