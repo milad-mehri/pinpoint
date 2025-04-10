@@ -12,6 +12,7 @@ const Header = () => {
 
   const isDailyPage = pathname === "/" || pathname.startsWith("/daily");
   const isPracticePage = pathname.startsWith("/practice");
+  const isFeedbackPage = pathname.startsWith("/feedback");
 
   return (
     <>
@@ -21,7 +22,7 @@ const Header = () => {
           <div className="text-xl font-bold flex items-center">
             <span>Pinpoint</span>
             <span className="ml-2 text-slate-600">
-              {isDailyPage ? "Daily" : "Practice"}
+              {isDailyPage ? "Daily" : isFeedbackPage ? "Feedback" : "Practice"}
               {isPracticePage && (
                 <span className="ml-2 bg-yellow-500 text-black px-2 py-1 rounded text-sm">
                   EXP
@@ -63,7 +64,9 @@ const Header = () => {
       </header>
 
       {/* Modal */}
-      {isModalOpen && <InstructionsModal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && (
+        <InstructionsModal onClose={() => setIsModalOpen(false)} />
+      )}
     </>
   );
 };

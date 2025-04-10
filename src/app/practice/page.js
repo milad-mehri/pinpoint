@@ -13,7 +13,7 @@ export default function Practice() {
     const fetchAndRedirect = async () => {
       try {
         // Fetch the categories.csv file from the public folder
-        const response = await fetch("/pinpoint/categories.csv");
+        const response = await fetch("/categories.csv");
         if (!response.ok) {
           throw new Error("Failed to fetch categories.csv");
         }

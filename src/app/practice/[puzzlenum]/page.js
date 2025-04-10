@@ -5,7 +5,7 @@ import Game from "../../../components/Game";
 import { promises as fs } from "fs";
 import path from "path";
 import Papa from "papaparse";
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
 // Add this function
 export async function generateStaticParams() {

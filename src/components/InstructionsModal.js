@@ -55,7 +55,7 @@ const InstructionsModal = ({ onClose }) => {
         {/* Placeholder for Gameplay GIF */}
         <div className="w-full h-58 bg-gray-200 rounded-md mb-4 flex items-center justify-center overflow-hidden">
           <img
-            src="/pinpoint/example2.gif"
+            src="/example2.gif"
             alt="Gameplay demonstration"
             className="w-full h-full  rounded-md object-cover scale-120"
             style={{

@@ -359,7 +359,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
               {/* Next Button */}
               <button
                 title="Practice mode"
-                onClick={() => (window.location.href = "/pinpoint/practice")} // Replace with navigation logic if needed
+                onClick={() => (window.location.href = "/practice")} // Replace with navigation logic if needed
                 className="bg-gray-100 hover:bg-gray-200 text-gray-500 w-14 h-9 rounded-full flex items-center justify-center shadow-md transition"
               >
                 {mode === "daily" ? (
@@ -391,10 +391,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
               className="w-full border border-gray-300 rounded-md px-4 py-2 text-lg focus:ring-2 focus:ring-blue-500 outline-none"
             />
 
-            {isMobile && (
-
-<Keyboard onKeyPress={handleKeyboardInput} />
-            )}
+            {isMobile && <Keyboard onKeyPress={handleKeyboardInput} />}
           </>
         )}
       </div>

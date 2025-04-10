@@ -18,7 +18,7 @@ function getPSTDayOfYear() {
  * Fetches the daily puzzle from `daily.csv` in the `public` directory.
  */
 async function getDailyPuzzleClient() {
-  const response = await fetch("/pinpoint/daily.csv"); // Fetch the CSV file from the public directory
+  const response = await fetch("/daily.csv"); // Fetch the CSV file from the public directory
   if (!response.ok) {
     throw new Error("Failed to fetch daily puzzle CSV.");
   }
