@@ -1,26 +1,32 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
-import InstructionsModal from "./InstructionsModal"; // Modal component
+import InstructionsModal from "./InstructionsModal";
+import FeedbackBanner from "./FeedbackBanner";
 
 const Header = () => {
   const pathname = usePathname();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   const isDailyPage = pathname === "/" || pathname.startsWith("/daily");
   const isPracticePage = pathname.startsWith("/practice");
   const isFeedbackPage = pathname.startsWith("/feedback");
 
   return (
-    <>
+    <div className={`relative ${showBanner ? "pt-8" : ""}`}>
+      {showBanner && <FeedbackBanner onDismiss={() => setShowBanner(false)} />}
       <header className="w-full bg-white py-4 shadow-md">
         <div className="max-w-4xl mx-auto flex justify-between items-center px-4">
           {/* Left Side - Title */}
           <div className="text-xl font-bold flex items-center">
-            <span>Pinpoint</span>
+            <Link href="/" className="hover:underline">
+              <span>Pinpoint</span>
+            </Link>{" "}
             <span className="ml-2 text-slate-600">
               {isDailyPage ? "Daily" : isFeedbackPage ? "Feedback" : "Practice"}
               {isPracticePage && (
@@ -62,12 +68,10 @@ const Header = () => {
           </div>
         </div>
       </header>
-
-      {/* Modal */}
       {isModalOpen && (
         <InstructionsModal onClose={() => setIsModalOpen(false)} />
       )}
-    </>
+    </div>
   );
 };
 
