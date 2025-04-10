@@ -24,7 +24,7 @@ export default function FeedbackPage() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setSubmitted(true);
     setFormData({ name: "", contact: "", message: "", contribute: false });
   };
