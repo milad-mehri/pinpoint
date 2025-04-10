@@ -92,7 +92,7 @@ export default function FeedbackPage() {
               method="POST"
               data-netlify="true"
               onSubmit={(e) => {
-                e.preventDefault();
+                // e.preventDefault();
                 setSubmitted(true);
               }}
               className="p-10 max-w-2xl w-full space-y-6 text-left"
