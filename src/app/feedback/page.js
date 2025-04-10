@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import Header from "../../components/Header";
-import { ChevronRight } from "lucide-react";
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
+import Header from "../../components/Header"
+import { ChevronRight } from "lucide-react"
 
 export default function FeedbackPage() {
   const [formData, setFormData] = useState({
@@ -12,22 +12,43 @@ export default function FeedbackPage() {
     contact: "",
     message: "",
     contribute: false,
-  });
-  const [submitted, setSubmitted] = useState(false);
+  })
+  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type, checked } = e.target
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    }));
-  };
+    }))
+  }
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    setSubmitted(true);
-    setFormData({ name: "", contact: "", message: "", contribute: false });
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    // Create the form data to submit
+    const formDataToSubmit = new FormData(e.target)
+
+    try {
+      // Submit the form data to Netlify
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formDataToSubmit).toString(),
+      })
+
+      if (response.ok) {
+        // Show the thank you message
+        setSubmitted(true)
+        // Reset the form
+        setFormData({ name: "", contact: "", message: "", contribute: false })
+      } else {
+        console.error("Form submission failed")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -48,19 +69,14 @@ export default function FeedbackPage() {
               transition={{ duration: 0.6 }}
               className="text-left max-w-xl w-full"
             >
-              <h1 className="text-green-600 text-5xl font-bold mb-2">
-                Thank you for your feedback!
-              </h1>
-              <p className="text-sm text-gray-500 mb-10">
-                Some small text here cuz it looks cool
-              </p>
+              <h1 className="text-green-600 text-5xl font-bold mb-2">Thank you for your feedback!</h1>
+              <p className="text-sm text-gray-500 mb-10">Some small text here cuz it looks cool</p>
 
               <h2 className="text-2xl font-bold mb-6">Continue to...</h2>
               <ul className="space-y-5">
                 <li>
                   <Link
                     href="/"
-                    target="blank"
                     className="flex items-center text-xl font-medium text-black hover:text-green-600 transition-colors"
                   >
                     Daily <ChevronRight className="ml-2 w-5 h-5" />
@@ -91,16 +107,23 @@ export default function FeedbackPage() {
               name="feedback"
               method="POST"
               data-netlify="true"
-              onSubmit={(e) => {
-                // e.preventDefault();
-                setSubmitted(true);
-              }}
+              netlify-honeypot="bot-field"
+              action="/feedback"
+              onSubmit={handleSubmit}
               className="p-10 max-w-2xl w-full space-y-6 text-left"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
+              {/* Netlify form requirements */}
               <input type="hidden" name="form-name" value="feedback" />
+              <input type="hidden" name="no-cache" value="1" />
+              <p className="hidden">
+                <label>
+                  Don't fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
+
               <motion.h1
                 className="text-3xl font-bold text-gray-800"
                 initial={{ opacity: 0, y: -20 }}
@@ -119,14 +142,8 @@ export default function FeedbackPage() {
                 Got an idea, bug report, or want to help build Pinpoint?
               </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Name (optional)
-                </label>
+              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Name (optional)</label>
                 <input
                   name="name"
                   value={formData.name}
@@ -136,11 +153,7 @@ export default function FeedbackPage() {
                 />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-              >
+              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.5 }}>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Contact (ex. email, phone, Discord, etc.)
                 </label>
@@ -153,14 +166,8 @@ export default function FeedbackPage() {
                 />
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Your message
-                </label>
+              <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Your message</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -186,5 +193,5 @@ export default function FeedbackPage() {
         </AnimatePresence>
       </main>
     </div>
-  );
+  )
 }
