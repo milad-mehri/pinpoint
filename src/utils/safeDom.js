@@ -128,9 +128,18 @@ export function applyDOMSafetyPatches() {
     }
     
     // For Next.js App Router
-    if (typeof window.navigation !== 'undefined') {
-      window.navigation.addEventListener('navigate', () => {
-        cleanupTimeouts();
+    if (window.navigation) {
+      window.navigation.addEventListener('navigate', cleanupTimeouts);
+    }
+    
+    // Add a specific event listener for Nextjs route changes
+    if (typeof window !== 'undefined') {
+      // Listen for any click on a elements - potential route changes
+      document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' || e.target.closest('a')) {
+          // Could be a route change, clean up as a precaution
+          cleanupTimeouts();
+        }
       });
     }
     
@@ -141,51 +150,6 @@ export function applyDOMSafetyPatches() {
     return true;
   } catch (e) {
     console.error('Failed to apply DOM safety patches:', e);
-    return false;
-  }
-}
-
-/**
- * Global error handler for DOM-related errors
- */
-export function installDOMErrorHandler() {
-  if (typeof window === 'undefined') return false;
-  
-  try {
-    // Store original console.error
-    const originalConsoleError = console.error;
-    
-    // Override console.error to catch and handle DOM errors
-    console.error = (...args) => {
-      const errorStr = args.join(' ');
-      
-      // Check if this is a DOM error we want to suppress
-      if (
-        errorStr.includes('removeChild') || 
-        errorStr.includes('The node to be removed is not a child')
-      ) {
-        console.warn('DOM error suppressed:', errorStr);
-        return;
-      }
-      
-      // Pass through all other errors
-      return originalConsoleError.apply(console, args);
-    };
-    
-    // Also catch unhandled promise rejections
-    window.addEventListener('unhandledrejection', event => {
-      if (
-        event.reason && 
-        typeof event.reason.message === 'string' && 
-        event.reason.message.includes('removeChild')
-      ) {
-        console.warn('Unhandled DOM error suppressed:', event.reason.message);
-        event.preventDefault();
-      }
-    });
-    
-    return true;
-  } catch (e) {
     return false;
   }
 }
@@ -241,7 +205,6 @@ export function initSafeDOM() {
   if (typeof window === 'undefined') return;
   
   applyDOMSafetyPatches();
-  installDOMErrorHandler();
   
   console.log('DOM safety initialized');
 } 

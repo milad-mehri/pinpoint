@@ -376,6 +376,35 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     }
   };
 
+  // Ensure proper cleanup when component unmounts
+  useEffect(() => {
+    return () => {
+      // Clean up any potential pending operations
+      const pendingOperationHandler = () => {
+        // Find any orphaned toast or popup elements and manually remove them
+        const orphanedElements = document.querySelectorAll('.toast-notification, .popup-notification');
+        orphanedElements.forEach(el => {
+          if (el && el.parentNode) {
+            try {
+              el.parentNode.removeChild(el);
+            } catch (err) {
+              // Ignore errors during cleanup
+            }
+          }
+        });
+        
+        // Clear any dangling timeouts
+        for (let i = 0; i < 1000; i++) {
+          window.clearTimeout(i);
+        }
+      };
+      
+      // Execute cleanup immediately and also defer to next tick
+      pendingOperationHandler();
+      setTimeout(pendingOperationHandler, 0);
+    };
+  }, []);
+
   return (
     <>
       <div 

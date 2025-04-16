@@ -73,6 +73,39 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         
+        {/* DOM Safety Patches - applied as early as possible */}
+        <Script id="dom-safety-patches" strategy="beforeInteractive">
+          {`
+          (function() {
+            // Apply patches to prevent 'removeChild' errors
+            if (typeof Node !== 'undefined') {
+              // Store original methods
+              const originalRemoveChild = Node.prototype.removeChild;
+              
+              // Make removeChild safe
+              Node.prototype.removeChild = function(child) {
+                if (!child) return null;
+                
+                // Only proceed if the child is actually a child of this node
+                if (this.contains && this.contains(child)) {
+                  try {
+                    return originalRemoveChild.call(this, child);
+                  } catch (e) {
+                    console.warn('[DOM Safety] removeChild error:', e.message);
+                    return child;
+                  }
+                } else {
+                  // Not a child, just return it
+                  return child;
+                }
+              };
+              
+              console.log('[DOM Safety] DOM patches applied during initial load');
+            }
+          })();
+          `}
+        </Script>
+        
         {/* Google Analytics Script */}
         <Script
           async

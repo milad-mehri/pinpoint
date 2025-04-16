@@ -11,48 +11,25 @@ export default class DOMErrorBoundary extends Component {
     super(props);
     this.state = { hasError: false, error: null };
     
-    // Globally handle removeChild errors
-    this.handleGlobalErrors();
+    // Add unhandled rejection listener without overriding console.error
+    if (typeof window !== 'undefined') {
+      window.addEventListener('unhandledrejection', this.handleUnhandledRejection);
+    }
   }
   
-  handleGlobalErrors() {
-    if (typeof window !== 'undefined') {
-      // Store original console.error
-      const originalConsoleError = console.error;
-      
-      // Override console.error to catch and handle DOM errors
-      console.error = (...args) => {
-        // Check if this is a DOM-related error we want to catch
-        const errorMessage = args.join(' ');
-        if (
-          errorMessage.includes('removeChild') ||
-          errorMessage.includes('appendChild') ||
-          errorMessage.includes('The node to be removed is not a child')
-        ) {
-          // Prevent the error from propagating
-          console.warn('DOM operation error caught and handled:', errorMessage);
-          return;
-        }
-        
-        // Pass other errors to the original console.error
-        originalConsoleError.apply(console, args);
-      };
-      
-      // Also intercept unhandled promise rejections related to DOM
-      window.addEventListener('unhandledrejection', (event) => {
-        if (
-          event.reason && 
-          typeof event.reason.message === 'string' && 
-          (
-            event.reason.message.includes('removeChild') ||
-            event.reason.message.includes('appendChild') ||
-            event.reason.message.includes('The node to be removed is not a child')
-          )
-        ) {
-          event.preventDefault();
-          console.warn('Unhandled Promise rejection (DOM error) caught:', event.reason);
-        }
-      });
+  handleUnhandledRejection = (event) => {
+    if (
+      event.reason && 
+      typeof event.reason.message === 'string' && 
+      (
+        event.reason.message.includes('removeChild') ||
+        event.reason.message.includes('appendChild') ||
+        event.reason.message.includes('The node to be removed is not a child')
+      )
+    ) {
+      // Prevent the unhandled rejection from propagating
+      event.preventDefault();
+      console.warn('DOM-related unhandled rejection suppressed:', event.reason.message);
     }
   }
 
@@ -85,7 +62,14 @@ export default class DOMErrorBoundary extends Component {
         error.message.includes('The node to be removed is not a child')
       )
     ) {
-      console.warn('DOM error caught by boundary:', error, errorInfo);
+      console.warn('DOM error caught by boundary:', error.message);
+    }
+  }
+  
+  componentWillUnmount() {
+    // Clean up event listeners
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('unhandledrejection', this.handleUnhandledRejection);
     }
   }
 
