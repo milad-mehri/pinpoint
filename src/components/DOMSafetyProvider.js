@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { initSafeDOM } from '../utils/safeDom';
+import { setupClipboardCleanup } from '../utils/copyToClipboard';
 
 /**
  * Component that applies DOM safety patches at the application level.
@@ -15,6 +16,9 @@ export default function DOMSafetyProvider({ children }) {
   useEffect(() => {
     // Apply all the DOM safety features
     initSafeDOM();
+    
+    // Set up clipboard cleanup
+    setupClipboardCleanup();
   }, []);
 
   return children;

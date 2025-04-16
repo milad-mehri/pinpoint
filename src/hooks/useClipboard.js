@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import useSafeDOM from './useSafeDOM';
+import { copyToClipboard } from '../utils/copyToClipboard';
 
 /**
  * A hook for safely copying text to clipboard with feedback state
@@ -10,7 +10,6 @@ import useSafeDOM from './useSafeDOM';
 export default function useClipboard() {
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState(null);
-  const { copyToClipboard } = useSafeDOM();
   
   /**
    * Copy text to clipboard and manage feedback state
