@@ -2,36 +2,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import { useEffect } from "react";
 
 const InstructionsModal = ({ onClose }) => {
   const handleClickOutside = (e) => {
     if (e.target.id === "modal-overlay") onClose();
   };
-  
-  // Allow page to be scrollable but prevent body scrolling when modal is open
-  useEffect(() => {
-    // Store original overflow value
-    const originalOverflow = document.body.style.overflow;
-    
-    // Add a class to body rather than setting overflow to hidden directly
-    document.body.classList.add('modal-open');
-    
-    // Cleanup when modal is closed
-    return () => {
-      document.body.classList.remove('modal-open');
-      document.body.style.overflow = originalOverflow;
-    };
-  }, []);
 
   return (
     <div
       id="modal-overlay"
       onClick={handleClickOutside}
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-start justify-center z-50 p-4 overflow-y-auto"
-      style={{ paddingTop: "5vh" }}
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
     >
-      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 p-6 relative my-4">
+      <div className="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 p-6 relative">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -74,7 +57,7 @@ const InstructionsModal = ({ onClose }) => {
           <img
             src="/example2.gif"
             alt="Gameplay demonstration"
-            className="w-full h-full rounded-md object-cover"
+            className="w-full h-full  rounded-md object-cover scale-120"
             style={{
               transform: "scale(1.3)",
               transition: "transform 0.3s ease",

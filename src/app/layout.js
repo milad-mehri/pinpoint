@@ -1,8 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import DOMSafetyProvider from "../components/DOMSafetyProvider";
-import DOMErrorBoundary from "../components/DOMErrorBoundary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,49 +61,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Fix for iOS viewport */}
-        <meta 
-          name="viewport" 
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" 
-        />
-        
-        {/* iOS specific meta tags */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* DOM Safety Patches - applied as early as possible */}
-        <Script id="dom-safety-patches" strategy="beforeInteractive">
-          {`
-          (function() {
-            // Apply patches to prevent 'removeChild' errors
-            if (typeof Node !== 'undefined') {
-              // Store original methods
-              const originalRemoveChild = Node.prototype.removeChild;
-              
-              // Make removeChild safe
-              Node.prototype.removeChild = function(child) {
-                if (!child) return null;
-                
-                // Only proceed if the child is actually a child of this node
-                if (this.contains && this.contains(child)) {
-                  try {
-                    return originalRemoveChild.call(this, child);
-                  } catch (e) {
-                    console.warn('[DOM Safety] removeChild error:', e.message);
-                    return child;
-                  }
-                } else {
-                  // Not a child, just return it
-                  return child;
-                }
-              };
-              
-              console.log('[DOM Safety] DOM patches applied during initial load');
-            }
-          })();
-          `}
-        </Script>
-        
         {/* Google Analytics Script */}
         <Script
           async
@@ -122,59 +77,12 @@ export default function RootLayout({ children }) {
       });
     `}
         </Script>
-        
-        {/* iOS keyboard fix script */}
-        <Script id="ios-keyboard-fix">
-          {`
-          (function() {
-            var viewportHeight = window.innerHeight;
-            
-            function setViewportProperties() {
-              document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
-            }
-            
-            // Detect iOS
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-            
-            if (isIOS) {
-              window.addEventListener('resize', function() {
-                // If the keyboard is open, the window.innerHeight will be smaller
-                if (window.innerHeight < viewportHeight) {
-                  document.documentElement.style.setProperty('--keyboard-height', (viewportHeight - window.innerHeight) + 'px');
-                } else {
-                  document.documentElement.style.setProperty('--keyboard-height', '0px');
-                  viewportHeight = window.innerHeight; // Update the max height
-                }
-                setViewportProperties();
-              });
-              
-              // Ensure scrolling is enabled
-              document.addEventListener('touchmove', function(e) {
-                const target = e.target;
-                const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
-                
-                if (!isInput) {
-                  e.preventDefault();
-                }
-              }, { passive: false });
-            }
-            
-            // Initial call
-            setViewportProperties();
-          })();
-          `}
-        </Script>
       </head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <DOMErrorBoundary>
-          <DOMSafetyProvider>
-            {children}
-          </DOMSafetyProvider>
-        </DOMErrorBoundary>
+        {children}
       </body>
     </html>
   );
