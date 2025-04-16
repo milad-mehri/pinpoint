@@ -12,6 +12,7 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --transition: all 0.2s ease;
   --header-height: auto;
+  --vh: 1vh;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,8 +27,11 @@ body {
   background-color: #f5f5f5;
   color: black;
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
 }
 
 /* Game container - ensure proper spacing */
@@ -36,23 +40,56 @@ body {
   max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
+  position: relative;
+  height: auto;
 }
 
 @media (max-width: 1020px) {
   .game-container {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
   }
 }
 
-/* html {
-  overflow: hidden;
-}
-
-@media (max-width: 420px) {
-  html {
-    overflow: auto;
+/* Mobile keyboard fixes */
+@media (max-width: 640px) {
+  .position-fixed {
+    position: relative;
+    z-index: 10;
   }
-} */
+  
+  /* Prevent content from being pushed up by keyboard */
+  .min-h-screen {
+    min-height: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  /* Ensure the content stays in view when keyboard appears */
+  main.flex-grow {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* Top align header */
+  header.sticky {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* More compact game layout */
+  .game-container {
+    padding: 0.75rem;
+  }
+}
 
 .myInput {
   background-color: white;

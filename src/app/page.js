@@ -105,13 +105,13 @@ export default function DailyPuzzle() {
   return (
     <div className="min-h-screen flex flex-col overflow-hidden fade-in">
       {/* Header */}
-      <header className="flex-shrink-0 shadow-md z-10">
+      <header className="flex-shrink-0 shadow-md z-10 sticky top-0">
         <Header />
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow flex items-center justify-center bg-gray-100">
-        <div className="game-container">
+      <main className="flex items-start justify-start bg-gray-100 w-full">
+        <div className="game-container w-full">
           <Game
             words={words}
             category={puzzle.category}

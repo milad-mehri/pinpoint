@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import Keyboard from "./Keyboard";
 import DailyTimer from "./DailyTimer";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +10,8 @@ import {
   faArrowRight,
   faDumbbell,
   faCalendarDay,
-  faExclamationTriangle
+  faExclamationTriangle,
+  faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
@@ -25,6 +25,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   const [visibleWords, setVisibleWords] = useState(["Word 1"]); // Track words revealed during gameplay
 
   const inputRef = useRef(null); // Create a ref for the input element
+  const gameContainerRef = useRef(null); // Reference for the game container
 
   useEffect(() => {
     if (gameOver) {
@@ -33,10 +34,11 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   }, [gameOver]);
 
   useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus(); // Automatically focus the input
+    // Focus input when component mounts or input value changes
+    if (inputRef.current && !gameOver) {
+      inputRef.current.focus();
     }
-  }, [input]); // Re-run whenever input changes
+  }, [input, gameOver]);
 
   // Detect if the device is mobile
   useEffect(() => {
@@ -51,6 +53,28 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
       window.removeEventListener("resize", updateIsMobile);
     };
   }, []);
+
+  // Add viewport height fix for mobile keyboards
+  useEffect(() => {
+    // Function to update viewport height
+    const setVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    // Initial set
+    setVH();
+
+    // Update on resize and orientation change
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+
+    return () => {
+      window.removeEventListener('resize', setVH);
+      window.removeEventListener('orientationchange', setVH);
+    };
+  }, []);
+
   useEffect(() => {
     if (mode === "daily") {
       const completed = checkDailyCompletion();
@@ -217,47 +241,24 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     }
   };
 
-  const handleKeyboardInput = (key) => {
-    if (key === "DEL" || key === "BACKSPACE") {
-      setInput((prev) => prev.slice(0, -1));
-    } else if (key === "ENTER") {
-      handleGuess();
-    } else if (/^[a-zA-Z0-9 ]$/.test(key)) {
-      setInput((prev) => prev + key);
-    }
-  };
-
-  // Add physical keyboard support for desktop
-  useEffect(() => {
-    if (isMobile) return; // Skip if on mobile
-
-    const handlePhysicalKeyPress = (e) => {
-      // if (e.key === "Enter") {
-      //   handleGuess();
-      // } else if (e.key === "Backspace") {
-      //   handleKeyboardInput("DEL");
-      // } else if (/^[a-zA-Z0-9 ]$/.test(e.key)) {
-      //   handleKeyboardInput(e.key.toUpperCase());
-      // }
-    };
-
-    window.addEventListener("keydown", handlePhysicalKeyPress);
-    return () => {
-      window.removeEventListener("keydown", handlePhysicalKeyPress);
-    };
-  }, [isMobile]);
-
   return (
-    <div className="bg-white shadow-lg rounded-lg w-full sm:w-4/5 lg:w-2/3 max-w-lg mx-auto p-6 flex flex-col justify-between">
+    <div 
+      ref={gameContainerRef}
+      className="bg-white shadow-lg rounded-lg w-full sm:w-4/5 lg:w-2/3 max-w-lg mx-auto p-6 flex flex-col justify-between position-fixed"
+      style={{ 
+        height: "auto", 
+        maxHeight: isMobile ? "fit-content" : "calc(var(--vh, 1vh) * 100 - 100px)" 
+      }}
+    >
       {/* Words Section */}
-      <div className="space-y-0">
+      <div className="space-y-0 overflow-y-auto flex-shrink-0">
         {words.map((word, index) => {
           const isRevealed = revealedWords.includes(word); // Check if the word is revealed
           const isVisible = visibleWords.includes(word);
           return (
             <div
               key={index}
-              className={`py-4 px-4 text-lg font-semibold text-center border-none ${
+              className={`py-3 px-4 text-lg font-semibold text-center border-none ${
                 index === 0 ? "rounded-t-lg" : ""
               } ${index === words.length - 1 ? "rounded-b-lg" : ""}`}
               style={{
@@ -303,8 +304,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
         })}
       </div>
       {/* Guesses Section */}
-      <div className="space-y-4">
-        <div className="mt-4 flex flex-wrap gap-2">
+      <div className="space-y-2 mt-auto">
+        <div className="mt-2 flex flex-wrap gap-2">
           {guesses.map((guess, index) => (
             <span key={index} className="line-through text-gray-500">
               {guess}
@@ -386,22 +387,27 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
             </div>
           </motion.div>
         ) : (
-          <>
+          <div className="relative">
             <input
+              ref={inputRef}
               type="text"
-              autoFocus={true} // Ensure focus doesn't force a mismatch
+              autoFocus={true}
               value={input}
-              readOnly={isMobile} // Prevent keyboard opening for mobile
-              onChange={(e) => setInput(e.target.value)} // Handle only if not readOnly
+              onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => {
                 if (e.key === "Enter") handleGuess();
               }}
               placeholder="Guess the category..."
-              className="w-full border border-gray-300 rounded-md px-4 py-2 text-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-lg focus:ring-2 focus:ring-blue-500 outline-none pr-12"
             />
-
-            {isMobile && <Keyboard onKeyPress={handleKeyboardInput} />}
-          </>
+            <button
+              onClick={handleGuess}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700 transition-colors bg-transparent border-none p-2"
+              aria-label="Submit guess"
+            >
+              <FontAwesomeIcon icon={faPaperPlane} />
+            </button>
+          </div>
         )}
       </div>
     </div>
