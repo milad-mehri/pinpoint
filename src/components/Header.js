@@ -24,7 +24,7 @@ const Header = () => {
           <FeedbackBanner onDismiss={() => setShowBanner(false)} />
         </div>
       )}
-      <header className="w-full bg-white py-4 shadow-md sticky top-0 z-10">
+      <header className="w-full bg-white py-4 shadow-md z-10">
         <div className="max-w-4xl mx-auto flex justify-between items-center px-4">
           {/* Left Side - Title */}
           <div className="text-xl font-bold flex items-center">

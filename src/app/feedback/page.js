@@ -51,14 +51,14 @@ export default function FeedbackPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col font-sans">
+    <div className="min-h-screen bg-white flex flex-col font-sans overflow-auto">
       {/* Header Navigation */}
-      <header className="h-[10vh] flex-shrink-0">
+      <div className="sticky top-0 z-50 w-full">
         <Header />
-      </header>
+      </div>
 
       {/* Feedback Section */}
-      <main className="h-[90vh] flex-grow flex items-center justify-center px-6">
+      <main className="flex-grow flex items-start justify-center px-6 py-10 mt-4">
         <AnimatePresence mode="wait">
           {submitted ? (
             <motion.div

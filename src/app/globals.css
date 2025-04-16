@@ -27,17 +27,17 @@
 @supports (-webkit-touch-callout: none) {
   /* iOS-specific styles */
   body {
-    /* Prevent pull-to-refresh behavior */
+    /* Allow scrolling but prevent pull-to-refresh */
     overscroll-behavior-y: none;
-    /* Prevent elastic overscroll */
-    position: fixed;
+    /* Don't use position: fixed as it breaks scrolling */
+    position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-y: auto;
   }
 
   .ios-viewport {
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -105,6 +105,7 @@ header {
   .min-h-screen {
     min-height: 100vh;
     min-height: calc(var(--vh, 1vh) * 100);
+    overflow-y: auto; /* Always allow scrolling */
   }
   
   header.sticky-top {
@@ -128,7 +129,7 @@ header {
     z-index: 10;
   }
   
-  /* Prevent content from being pushed up by keyboard */
+  /* Allow content to scroll with keyboard */
   .min-h-screen {
     min-height: auto;
     height: auto;
@@ -154,10 +155,11 @@ header {
   
   /* Top align header */
   header.sticky, header.sticky-top {
-    position: relative;
+    position: sticky;
     top: 0;
     width: 100%;
     max-width: 100vw;
+    z-index: 50;
   }
   
   /* More compact game layout */
@@ -223,4 +225,27 @@ button, a {
 
 .fade-in {
   animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal styling */
+.modal-open {
+  /* We want the page to be scrollable but the body not to scroll behind the modal */
+  overflow-y: auto !important;
+  padding-right: 15px; /* Prevent layout shift when scrollbar appears/disappears */
+}
+
+@media (max-width: 640px) {
+  .modal-open {
+    position: relative !important; /* Override any fixed positioning on mobile */
+  }
+}
+
+/* Ensure modals are scrollable on mobile */
+#modal-overlay {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* This ensures modals can be scrolled even on iOS */
+.fixed.inset-0.overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
 }
