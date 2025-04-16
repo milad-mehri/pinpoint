@@ -13,12 +13,53 @@
   --transition: all 0.2s ease;
   --header-height: auto;
   --vh: 1vh;
+  --keyboard-height: 0px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* iOS-specific detection and fixes */
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific styles */
+  body {
+    /* Prevent pull-to-refresh behavior */
+    overscroll-behavior-y: none;
+    /* Prevent elastic overscroll */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ios-viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ios-container {
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ios-content {
+    flex: 1 0 auto;
+    position: relative;
+    z-index: 1;
+    padding-bottom: var(--keyboard-height);
   }
 }
 
@@ -32,6 +73,14 @@ body {
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Header styles - ensure full width */
+header {
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 /* Game container - ensure proper spacing */
@@ -42,6 +91,28 @@ body {
   padding: 1rem;
   position: relative;
   height: auto;
+}
+
+/* Desktop and larger screens (centered layout) */
+@media (min-width: 641px) {
+  main.flex-center {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+  
+  header.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+  }
 }
 
 @media (max-width: 1020px) {
@@ -65,10 +136,12 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   
   /* Ensure the content stays in view when keyboard appears */
-  main.flex-grow {
+  main.flex-grow, main.flex-center {
     flex-grow: 0;
     flex-shrink: 0;
     width: 100%;
@@ -76,19 +149,33 @@ body {
     align-items: flex-start;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    overflow-y: auto;
   }
   
   /* Top align header */
-  header.sticky {
+  header.sticky, header.sticky-top {
     position: relative;
     top: 0;
     width: 100%;
+    max-width: 100vw;
   }
   
   /* More compact game layout */
   .game-container {
     padding: 0.75rem;
   }
+}
+
+/* Ensure proper scrolling within the app */
+#__next, .min-h-screen {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  overflow-y: auto;
+}
+
+.fade-in {
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .myInput {
@@ -108,6 +195,24 @@ body {
 /* Button hover effect */
 button, a {
   transition: var(--transition);
+}
+
+/* Prevent iOS auto-zoom on input */
+@media screen and (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Special fix for iOS keyboard issues */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input-wrapper input {
+  position: relative;
+  z-index: 1;
 }
 
 /* Subtle animations */

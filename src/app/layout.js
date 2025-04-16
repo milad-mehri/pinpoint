@@ -61,6 +61,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Fix for iOS viewport */}
+        <meta 
+          name="viewport" 
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" 
+        />
+        
+        {/* iOS specific meta tags */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        
         {/* Google Analytics Script */}
         <Script
           async
@@ -76,6 +86,49 @@ export default function RootLayout({ children }) {
         cookie_flags: 'SameSite=None;Secure'   // Ensures cookie compatibility for HTTPS
       });
     `}
+        </Script>
+        
+        {/* iOS keyboard fix script */}
+        <Script id="ios-keyboard-fix">
+          {`
+          (function() {
+            var viewportHeight = window.innerHeight;
+            
+            function setViewportProperties() {
+              document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+            }
+            
+            // Detect iOS
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            
+            if (isIOS) {
+              window.addEventListener('resize', function() {
+                // If the keyboard is open, the window.innerHeight will be smaller
+                if (window.innerHeight < viewportHeight) {
+                  document.documentElement.style.setProperty('--keyboard-height', (viewportHeight - window.innerHeight) + 'px');
+                } else {
+                  document.documentElement.style.setProperty('--keyboard-height', '0px');
+                  viewportHeight = window.innerHeight; // Update the max height
+                }
+                setViewportProperties();
+              });
+              
+              // Ensure scrolling is enabled
+              document.addEventListener('touchmove', function(e) {
+                const target = e.target;
+                const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA';
+                
+                if (!isInput) {
+                  e.preventDefault();
+                }
+              }, { passive: false });
+            }
+            
+            // Initial call
+            setViewportProperties();
+          })();
+          `}
         </Script>
       </head>
 

@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import DailyTimer from "./DailyTimer";
+import OffscreenInput from "./OffscreenInput";
+import useGameInput from "../hooks/useGameInput";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,21 +13,28 @@ import {
   faDumbbell,
   faCalendarDay,
   faExclamationTriangle,
-  faPaperPlane
 } from "@fortawesome/free-solid-svg-icons";
 
 const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   const [revealedWords, setRevealedWords] = useState([words[0]]);
 
   const [guesses, setGuesses] = useState([]);
-  const [input, setInput] = useState("");
+  const { input, setInput, inputRef, forceFocus } = useGameInput();
   const [gameOver, setGameOver] = useState(false);
   const [correctGuess, setCorrectGuess] = useState(false); // Track if the guess was correct
   const [isMobile, setIsMobile] = useState(false);
-  const [visibleWords, setVisibleWords] = useState(["Word 1"]); // Track words revealed during gameplay
+  const [isIOS, setIsIOS] = useState(false);
+  const [visibleWords, setVisibleWords] = useState([words[0]]); // Track words revealed during gameplay
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [isBrowser, setIsBrowser] = useState(false);
 
-  const inputRef = useRef(null); // Create a ref for the input element
   const gameContainerRef = useRef(null); // Reference for the game container
+  const originalScrollPos = useRef(0); // Store original scroll position
+
+  // Set isBrowser to true once component mounts
+  useEffect(() => {
+    setIsBrowser(true);
+  }, []);
 
   useEffect(() => {
     if (gameOver) {
@@ -33,29 +42,105 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     }
   }, [gameOver]);
 
+  // Detect device type and iOS specifically
   useEffect(() => {
-    // Focus input when component mounts or input value changes
-    if (inputRef.current && !gameOver) {
-      inputRef.current.focus();
-    }
-  }, [input, gameOver]);
-
-  // Detect if the device is mobile
-  useEffect(() => {
-    const updateIsMobile = () => {
-      setIsMobile(window.innerWidth <= 640); // Detect mobile devices
+    if (!isBrowser) return;
+    
+    const updateDeviceInfo = () => {
+      const mobile = window.innerWidth <= 640;
+      setIsMobile(mobile);
+      
+      // iOS detection
+      const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      setIsIOS(iOS);
+      
+      // Add iOS classes if needed
+      if (iOS && document.body) {
+        document.body.classList.add('ios-device');
+      }
     };
 
-    updateIsMobile();
-    window.addEventListener("resize", updateIsMobile);
+    updateDeviceInfo();
+    window.addEventListener("resize", updateDeviceInfo);
 
     return () => {
-      window.removeEventListener("resize", updateIsMobile);
+      window.removeEventListener("resize", updateDeviceInfo);
     };
-  }, []);
+  }, [isBrowser]);
+
+  // Handle iOS viewport and keyboard
+  useEffect(() => {
+    if (!isBrowser || !isIOS) return;
+
+    // For iOS, we need to prevent the viewport from being moved by the keyboard
+    const meta = document.querySelector('meta[name="viewport"]');
+    if (!meta) {
+      const newMeta = document.createElement('meta');
+      newMeta.name = 'viewport';
+      newMeta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
+      document.head.appendChild(newMeta);
+    } else {
+      meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
+    }
+
+    // Create wrapper elements for iOS if they don't exist
+    if (!document.querySelector('.ios-viewport')) {
+      // Save the body's children
+      const bodyChildren = Array.from(document.body.children);
+      
+      // Create new iOS-specific wrapper elements
+      const viewportEl = document.createElement('div');
+      viewportEl.className = 'ios-viewport';
+      
+      const containerEl = document.createElement('div');
+      containerEl.className = 'ios-container';
+      
+      const contentEl = document.createElement('div');
+      contentEl.className = 'ios-content';
+      
+      // Move body's children to the new structure
+      document.body.appendChild(viewportEl);
+      viewportEl.appendChild(containerEl);
+      containerEl.appendChild(contentEl);
+      
+      bodyChildren.forEach(child => {
+        if (child !== viewportEl) {
+          contentEl.appendChild(child);
+        }
+      });
+    }
+
+    // Keyboard handling for iOS
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        // When coming back from keyboard, restore position
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 50);
+      }
+    };
+
+    // Track scroll position to restore it when needed
+    const handleScroll = () => {
+      if (!isKeyboardVisible) {
+        originalScrollPos.current = window.scrollY;
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isBrowser, isIOS, isKeyboardVisible]);
 
   // Add viewport height fix for mobile keyboards
   useEffect(() => {
+    if (!isBrowser) return;
+    
     // Function to update viewport height
     const setVH = () => {
       const vh = window.innerHeight * 0.01;
@@ -73,12 +158,13 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
       window.removeEventListener('resize', setVH);
       window.removeEventListener('orientationchange', setVH);
     };
-  }, []);
+  }, [isBrowser]);
 
   useEffect(() => {
+    if (!isBrowser) return;
+    
     if (mode === "daily") {
       const completed = checkDailyCompletion();
-      // console.log(completed.revealedWords)
       if (completed) {
         setGameOver(true); // Skip directly to the end
         setCorrectGuess(completed.success);
@@ -94,9 +180,18 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     // Default behavior for practice mode or if daily isn't completed
     setRevealedWords([words[0]]);
     setVisibleWords([words[0]]);
-  }, [words, mode]);
+  }, [words, mode, isBrowser]);
+
+  // Ensure input is focused when component mounts and whenever gameOver changes
+  useEffect(() => {
+    if (!isBrowser || gameOver) return;
+    // Use our aggressive focus method
+    forceFocus();
+  }, [gameOver, forceFocus, isBrowser]);
 
   const handleShare = () => {
+    if (!isBrowser) return;
+    
     const popup = document.createElement("div");
     popup.className =
       "fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white px-4 py-2 rounded-md shadow-lg opacity-0 transition-opacity duration-300";
@@ -148,6 +243,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   };
 
   const fallbackCopyText = (text) => {
+    if (!isBrowser) return;
+    
     const textArea = document.createElement("textarea");
     textArea.value = text;
     textArea.style.position = "fixed"; // Avoid scrolling to the bottom of the page
@@ -171,6 +268,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   };
 
   const saveResult = (success, revealedWords, guesses) => {
+    if (!isBrowser) return;
+    
     const now = new Date();
     const pstDate = new Date(
       now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
@@ -195,6 +294,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   };
 
   const checkDailyCompletion = () => {
+    if (!isBrowser) return null;
+    
     const now = new Date();
     const pstDate = new Date(
       now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
@@ -234,6 +335,9 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
       const nextWord = words[revealedWords.length];
       setRevealedWords([...revealedWords, nextWord]);
       setVisibleWords([...visibleWords, nextWord]); // Add the word to visibleWords
+      
+      // Re-focus input after revealing a new word
+      setTimeout(forceFocus, 100);
     } else {
       setGameOver(true);
       setCorrectGuess(false); // End the game with incorrect guess
@@ -241,10 +345,64 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     }
   };
 
+  // Handle input focus with iOS specific behavior
+  const handleInputFocus = () => {
+    setIsKeyboardVisible(true);
+    
+    if (!isBrowser) return;
+    
+    if (isIOS) {
+      // For iOS, store the current scroll position
+      originalScrollPos.current = window.scrollY;
+      
+      // Fix the layout in place for iOS
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${originalScrollPos.current}px`;
+      document.body.style.width = '100%';
+      
+      // Prevent default iOS behavior by manually handling focus
+      setTimeout(() => {
+        if (gameContainerRef.current) {
+          gameContainerRef.current.scrollIntoView({ block: 'start', behavior: 'auto' });
+        }
+        
+        // Make sure the iOS viewport is at the top
+        const iosViewport = document.querySelector('.ios-viewport');
+        if (iosViewport) {
+          iosViewport.scrollTop = 0;
+        }
+      }, 50);
+    } else if (isMobile) {
+      // For other mobile devices, just scroll to the game container
+      setTimeout(() => {
+        if (gameContainerRef.current) {
+          gameContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    }
+  };
+  
+  // Handle input blur with iOS specific behavior
+  const handleInputBlur = () => {
+    setIsKeyboardVisible(false);
+    
+    if (!isBrowser) return;
+    
+    if (isIOS) {
+      // Restore normal scrolling for iOS
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      
+      // Restore the original scroll position
+      window.scrollTo(0, originalScrollPos.current);
+    }
+  };
+
   return (
     <div 
       ref={gameContainerRef}
-      className="bg-white shadow-lg rounded-lg w-full sm:w-4/5 lg:w-2/3 max-w-lg mx-auto p-6 flex flex-col justify-between position-fixed"
+      className="bg-white shadow-lg rounded-lg w-full sm:w-4/5 lg:w-2/3 max-w-lg mx-auto p-6 flex flex-col justify-between position-fixed overflow-y-auto"
       style={{ 
         height: "auto", 
         maxHeight: isMobile ? "fit-content" : "calc(var(--vh, 1vh) * 100 - 100px)" 
@@ -263,6 +421,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
               } ${index === words.length - 1 ? "rounded-b-lg" : ""}`}
               style={{
                 backgroundColor: `rgba(173, 216, 230, ${0.2 + index * 0.2})`,
+                padding: isMobile ? "0.5rem 1rem" : "0.75rem 1rem",
+                minHeight: isMobile ? "2.5rem" : "3rem",
               }}
             >
               <div className="relative flex items-center justify-center">
@@ -387,27 +547,15 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
             </div>
           </motion.div>
         ) : (
-          <div className="relative">
-            <input
-              ref={inputRef}
-              type="text"
-              autoFocus={true}
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") handleGuess();
-              }}
-              placeholder="Guess the category..."
-              className="w-full border border-gray-300 rounded-md px-4 py-2 text-lg focus:ring-2 focus:ring-blue-500 outline-none pr-12"
-            />
-            <button
-              onClick={handleGuess}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700 transition-colors bg-transparent border-none p-2"
-              aria-label="Submit guess"
-            >
-              <FontAwesomeIcon icon={faPaperPlane} />
-            </button>
-          </div>
+          <OffscreenInput
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onSubmit={handleGuess}
+            placeholder="Guess the category..."
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
+            className="w-full"
+          />
         )}
       </div>
     </div>

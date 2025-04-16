@@ -77,12 +77,12 @@ export default async function PracticePuzzle({ params }) {
     return (
       <div className="min-h-screen flex flex-col overflow-hidden fade-in">
         {/* Header */}
-        <header className="flex-shrink-0 shadow-md z-10 sticky top-0">
+        <header className="flex-shrink-0 shadow-md z-10 sticky-top">
           <Header />
         </header>
 
         {/* Main Content */}
-        <main className="flex items-start justify-start bg-gray-100 w-full">
+        <main className="flex-center bg-gray-100 w-full">
           <div className="game-container w-full">
             <Game
               words={words}
