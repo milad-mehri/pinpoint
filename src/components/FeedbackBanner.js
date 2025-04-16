@@ -5,7 +5,7 @@ import { X } from "lucide-react";
 
 export default function FeedbackBanner({ onDismiss }) {
   return (
-    <div className="w-full bg-blue-50 text-blue-800 py-2 text-center text-sm absolute top-0 left-0 z-10">
+    <div className="w-full bg-blue-50 text-blue-800 py-2 text-center text-sm">
       <span>Pinpoint needs your help to improve. </span>
       <Link
         href="/feedback"

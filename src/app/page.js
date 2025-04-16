@@ -65,16 +65,31 @@ export default function DailyPuzzle() {
   // Error state
   if (error) {
     return (
-      <div className="h-screen flex flex-col justify-center items-center bg-gray-100">
-        <h1 className="text-2xl font-bold text-red-500">Error loading daily puzzle.</h1>
-        <p className="text-gray-600">Please try again later.</p>
+      <div className="h-screen flex flex-col justify-center items-center bg-gray-100 fade-in">
+        <div className="bg-white p-6 rounded-lg shadow-md max-w-md w-full text-center">
+          <h1 className="text-2xl font-bold text-red-500 mb-2">Error loading daily puzzle.</h1>
+          <p className="text-gray-600 mb-4">{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
       </div>
     );
   }
 
   // Loading state
   if (!puzzle) {
-    return <div className="h-screen flex items-center justify-center bg-gray-100">Loading...</div>;
+    return (
+      <div className="h-screen flex items-center justify-center bg-gray-100 fade-in">
+        <div className="flex flex-col items-center">
+          <div className="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="text-gray-600">Loading puzzle...</p>
+        </div>
+      </div>
+    );
   }
 
   // Prepare the words for the `Game` component
@@ -88,21 +103,23 @@ export default function DailyPuzzle() {
 
   // Render the puzzle
   return (
-    <div className="h-screen flex flex-col overflow-hidden custom:overflow-auto">
+    <div className="min-h-screen flex flex-col overflow-hidden fade-in">
       {/* Header */}
-      <header className="h-[10vh] flex-shrink-0">
+      <header className="flex-shrink-0 shadow-md z-10 sticky-top">
         <Header />
       </header>
 
       {/* Main Content */}
-      <main className="h-[90vh] flex-grow overflow-hidden lg:flex items-center justify-center bg-gray-100">
-        <Game
-          words={words}
-          category={puzzle.category}
-          keyWords={puzzle.key_words}
-          difficulty={puzzle.difficulty}
-          mode="daily"
-        />
+      <main className="flex-center bg-gray-100 w-full">
+        <div className="game-container w-full">
+          <Game
+            words={words}
+            category={puzzle.category}
+            keyWords={puzzle.key_words}
+            difficulty={puzzle.difficulty}
+            mode="daily"
+          />
+        </div>
       </main>
     </div>
   );
