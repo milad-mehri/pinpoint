@@ -80,22 +80,24 @@ export default async function PracticePuzzle({ params }) {
 
     // 8. Render the page with the fetched puzzle data
     return (
-      <div className="h-screen flex flex-col custom:overflow-auto">
+      <div className="min-h-screen flex flex-col overflow-hidden fade-in">
         {/* Header */}
-        <header className="h-[10vh] flex-shrink-0">
+        <header className="flex-shrink-0 shadow-md z-10">
           <Header />
         </header>
 
-        {/* Main content */}
-        <main className="h-[90vh] flex-grow lg:flex items-center justify-center bg-gray-100">
-          <Game
-            words={words}
-            category={puzzle.category}
-            keyWords={puzzle.key_words}
-            difficulty={puzzle.difficulty}
-            mode="practice"
-            gameId={puzzleNumber}
-          />
+        {/* Main Content */}
+        <main className="flex-grow flex items-center justify-center bg-gray-100">
+          <div className="game-container">
+            <Game
+              words={words}
+              category={puzzle.category}
+              keyWords={puzzle.key_words}
+              difficulty={puzzle.difficulty}
+              mode="practice"
+              gameId={puzzleNumber}
+            />
+          </div>
         </main>
       </div>
     );
@@ -104,13 +106,17 @@ export default async function PracticePuzzle({ params }) {
 
     // Render an error message UI if something goes wrong
     return (
-      <div className="h-screen flex flex-col justify-center items-center bg-gray-100">
-        <h1 className="text-2xl font-bold text-red-500">
-          Error loading puzzle.
-        </h1>
-        <p className="text-gray-600">
-          Please check the puzzle number or try again later.
-        </p>
+      <div className="h-screen flex flex-col justify-center items-center bg-gray-100 fade-in">
+        <div className="bg-white p-6 rounded-lg shadow-md max-w-md w-full text-center">
+          <h1 className="text-2xl font-bold text-red-500 mb-2">Error loading puzzle.</h1>
+          <p className="text-gray-600 mb-4">Please check the puzzle number or try again later.</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md transition-colors"
+          >
+            Try Again
+          </button>
+        </div>
       </div>
     );
   }
