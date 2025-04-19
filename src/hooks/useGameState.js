@@ -3,12 +3,19 @@ import { saveResult } from '../utils/gameUtils';
 import { GAME_MODES } from '../constants/gameConstants';
 
 export const useGameState = (words, mode, keyWords) => {
-  const [revealedWords, setRevealedWords] = useState([words[0]]);
+  // Initialize with null to avoid hydration mismatch
+  const [revealedWords, setRevealedWords] = useState(null);
+  const [visibleWords, setVisibleWords] = useState(null);
   const [guesses, setGuesses] = useState([]);
   const [input, setInput] = useState("");
   const [gameOver, setGameOver] = useState(false);
   const [correctGuess, setCorrectGuess] = useState(false);
-  const [visibleWords, setVisibleWords] = useState([words[0]]);
+
+  // Initialize state after mount to avoid hydration issues
+  useEffect(() => {
+    setRevealedWords([words[0]]);
+    setVisibleWords([words[0]]);
+  }, [words]);
 
   const handleGuess = () => {
     if (input.trim() === "") return;
@@ -41,7 +48,7 @@ export const useGameState = (words, mode, keyWords) => {
   };
 
   return {
-    revealedWords,
+    revealedWords: revealedWords || [words[0]], // Provide fallback for initial render
     setRevealedWords,
     guesses,
     setGuesses,
@@ -51,7 +58,7 @@ export const useGameState = (words, mode, keyWords) => {
     setGameOver,
     correctGuess,
     setCorrectGuess,
-    visibleWords,
+    visibleWords: visibleWords || [words[0]], // Provide fallback for initial render
     setVisibleWords,
     handleGuess
   };

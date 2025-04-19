@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 
-const WordDisplay = ({ word, index, isRevealed, isVisible, totalWords, gameOver }) => {
+const WordDisplay = ({ mobile, word, index, isRevealed, isVisible, totalWords, gameOver }) => {
   return (
     <div
-      className={`py-4 px-4 text-lg font-semibold text-center border-none ${
-        index === 0 ? "rounded-t-lg" : ""
-      } ${index === totalWords - 1 ? "rounded-b-lg" : ""}`}
+      className={`${mobile ? "py-2" : "py-4"} px-4 text-lg font-semibold text-center border-none ${index === 0 ? "rounded-t-lg" : ""
+        } ${index === totalWords - 1 ? "rounded-b-lg" : ""}`}
       style={{
         backgroundColor: `rgba(173, 216, 230, ${0.2 + index * 0.2})`,
       }}
@@ -21,8 +20,8 @@ const WordDisplay = ({ word, index, isRevealed, isVisible, totalWords, gameOver 
             isRevealed
               ? "text-black"
               : gameOver
-              ? "text-gray-500"
-              : "text-black"
+                ? "text-gray-500"
+                : "text-black"
           }
         >
           {isRevealed ? word : `Word ${index + 1}`}

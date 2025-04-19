@@ -2,17 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Keyboard from "./Keyboard";
-import DailyTimer from "./DailyTimer";
-import WordDisplay from "./WordDisplay";
-import GameControls from "./GameControls";
+import dynamic from 'next/dynamic';
 import { useGameState } from "../hooks/useGameState";
-import { useKeyboardInput } from "../hooks/useKeyboardInput";
 import { GAME_MODES, STYLES, SHARE_MESSAGES } from "../constants/gameConstants";
 import { checkDailyCompletion, copyToClipboard } from "../utils/gameUtils";
 
+// Dynamically import components that use browser APIs
+
+const DailyTimer = dynamic(() => import("./DailyTimer"), { ssr: false });
+const WordDisplay = dynamic(() => import("./WordDisplay"), { ssr: false });
+const GameControls = dynamic(() => import("./GameControls"), { ssr: false });
+
 const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  // Initialize with null to avoid hydration mismatch
+  const [isMobile, setIsMobile] = useState(null);
+  const [mounted, setMounted] = useState(false);
+
   const {
     revealedWords,
     setRevealedWords,
@@ -29,10 +34,10 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     handleGuess
   } = useGameState(words, mode, keyWords);
 
-  const { handleKeyboardInput } = useKeyboardInput(handleGuess, isMobile);
 
-  // Detect if the device is mobile
+  // Handle mounting and initial mobile detection
   useEffect(() => {
+    setMounted(true);
     const updateIsMobile = () => {
       setIsMobile(window.innerWidth <= 640);
     };
@@ -44,6 +49,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
 
   // Check daily completion
   useEffect(() => {
+    if (!mounted) return;
+
     if (mode === GAME_MODES.DAILY) {
       const completed = checkDailyCompletion();
       if (completed) {
@@ -58,9 +65,11 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
 
     setRevealedWords([words[0]]);
     setVisibleWords([words[0]]);
-  }, [words, mode]);
+  }, [words, mode, mounted]);
 
   const handleShare = async () => {
+    if (!mounted) return;
+
     const currentUrl = window.location.href;
     const gameNumber = mode === GAME_MODES.PRACTICE ? `Practice #${gameId}` : "Daily";
     const tries = guesses.length;
@@ -82,8 +91,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
       .replace("{url}", currentUrl);
 
     const success = await copyToClipboard(message);
-    if (success) {
-      // Show success popup
+    if (success && mounted) {
       const popup = document.createElement("div");
       popup.className = "fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white px-4 py-2 rounded-md shadow-lg opacity-0 transition-opacity duration-300";
       popup.textContent = "Copied to clipboard!";
@@ -97,11 +105,17 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     }
   };
 
+  // Don't render anything until after hydration
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <div className={STYLES.container}>
       <div className={STYLES.wordSection}>
         {words.map((word, index) => (
           <WordDisplay
+            mobile={isMobile}
             key={index}
             word={word}
             index={index}
@@ -152,9 +166,9 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
           <>
             <input
               type="text"
-              autoFocus={true}
+              autoFocus={mounted}
               value={input}
-              readOnly={isMobile}
+              readOnly={false}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => {
                 if (e.key === "Enter") handleGuess();
@@ -163,7 +177,6 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
               className={STYLES.input}
             />
 
-            {isMobile && <Keyboard onKeyPress={handleKeyboardInput} />}
           </>
         )}
       </div>
