@@ -13,14 +13,14 @@ Welcome to **Pinpoint**, a fun and engaging guessing game where your knowledge a
 ---
 
 ## 📸 Preview
-Here’s a sneak peek of the game in action:
+Here's a sneak peek of the game in action:
 
 ![Pinpoint Gameplay](public/example2.gif)
 
 ---
 
 ## 🚀 How to Play
-1. **Visit the game**: [Pinpoint Daily](https://pinpointpuzzle.netlify.app)
+1. **Visit the game**: [Pinpoint Daily](https://playpinpoint.co)
 2. **Start guessing**: Use the clues provided to figure out the hidden category.
 3. **Challenge yourself**: Try to solve puzzles faster and with fewer guesses!
 

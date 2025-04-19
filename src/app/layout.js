@@ -20,10 +20,10 @@ export const metadata = {
     title: "Pinpoint - The Ultimate Category Guessing Game",
     description:
       "Test your knowledge and intuition in Pinpoint! Can you guess the correct category from the clues? Join the fun now!",
-    url: "https://pinpointpuzzle.netlify.app",
+    url: "https://playpinpoint.co",
     images: [
       {
-        url: "https://pinpointpuzzle.netlify.app/example2.gif",
+        url: "https://playpinpoint.co/example2.gif",
         width: 1200,
         height: 630,
         alt: "Pinpoint - The Ultimate Category Guessing Game",
@@ -35,10 +35,10 @@ export const metadata = {
     title: "Pinpoint - The Ultimate Category Guessing Game",
     description:
       "Dive into the fun of Pinpoint! Guess the categories, test your wits, and share the challenge with friends.",
-    images: ["https://pinpointpuzzle.netlify.app/example2.gif"],
+    images: ["https://playpinpoint.co/example2.gif"],
   },
   icons: {
-    icon: "https://pinpointpuzzle.netlify.app/favicon.ico",
+    icon: "https://playpinpoint.co/favicon.ico",
   },
   keywords: [
     "category guessing game",
@@ -56,11 +56,22 @@ export const metadata = {
   ],
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Domain Redirection Script */}
+        <Script id="domain-redirect" strategy="beforeInteractive">
+          {`
+            (function() {
+              if (typeof window !== 'undefined' && window.location.hostname !== 'playpinpoint.co' && window.location.hostname !== 'localhost') {
+                const newUrl = 'https://playpinpoint.co' + window.location.pathname + window.location.search + window.location.hash;
+                window.location.replace(newUrl);
+              }
+            })();
+          `}
+        </Script>
+
         {/* Google Analytics Script */}
         <Script
           async
@@ -68,14 +79,14 @@ export default function RootLayout({ children }) {
         />
         <Script id="google-analytics">
           {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LXN713BY75', {
-        cookie_domain: 'pinpointpuzzle.netlify.app', // Your GitHub Pages domain
-        cookie_flags: 'SameSite=None;Secure'   // Ensures cookie compatibility for HTTPS
-      });
-    `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LXN713BY75', {
+              cookie_domain: 'playpinpoint.co',
+              cookie_flags: 'SameSite=None;Secure'
+            });
+          `}
         </Script>
       </head>
 

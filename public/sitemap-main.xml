@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pinpointpuzzle.netlify.app/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://playpinpoint.co/</loc>
+    <lastmod>2024-03-12</lastmod>
   </url>
   <url>
-    <loc>https://pinpointpuzzle.netlify.app/practice</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://playpinpoint.co/practice</loc>
+    <lastmod>2024-03-12</lastmod>
   </url>
   <url>
-    <loc>https://pinpointpuzzle.netlify.app/feedback</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>https://playpinpoint.co/feedback</loc>
+    <lastmod>2024-03-12</lastmod>
   </url>
 </urlset>
