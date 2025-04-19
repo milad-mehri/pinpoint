@@ -92,7 +92,7 @@ export default function DailyPuzzle() {
   // Render the puzzle
   return (
     <div className="min-h-screen flex flex-col">
-      <AdLayout>
+
         {/* Header */}
         <header className="flex-shrink-0">
           <Header />
@@ -110,7 +110,7 @@ export default function DailyPuzzle() {
             />
           </div>
         </main>
-      </AdLayout>
+
     </div>
   );
 }

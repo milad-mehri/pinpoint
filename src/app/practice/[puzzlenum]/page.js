@@ -82,7 +82,7 @@ export default async function PracticePuzzle({ params }) {
     // 8. Render the page with the fetched puzzle data
     return (
       <div className="min-h-screen flex flex-col">
-        <AdLayout>
+
           {/* Header */}
           <header className="flex-shrink-0">
             <Header />
@@ -101,7 +101,7 @@ export default async function PracticePuzzle({ params }) {
               />
             </div>
           </main>
-        </AdLayout>
+
       </div>
     );
   } catch (error) {
