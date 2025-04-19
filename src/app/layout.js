@@ -77,6 +77,13 @@ export default function RootLayout({ children }) {
       });
     `}
         </Script>
+        
+        {/* Google AdSense Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8194314786011681"
+          crossOrigin="anonymous"
+        />
       </head>
 
       <body
