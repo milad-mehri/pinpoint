@@ -48,8 +48,8 @@ const AdLayout = ({ children }) => {
         }}
       />
 
-      {/* Desktop Ads */}
-      <div className="hidden lg:block">
+      {/* Desktop and Tablet Ads */}
+      <div className="hidden md:block">
         {/* Left Ad */}
         <div className="fixed left-4 top-1/2 -translate-y-1/2 z-10">
           {/* pinpoint-left */}
@@ -77,7 +77,7 @@ const AdLayout = ({ children }) => {
       {children}
 
       {/* Mobile Bottom Ad */}
-      <div className="lg:hidden mt-4 w-full flex justify-center">
+      <div className="md:hidden mt-4 w-full flex justify-center">
         {/* pinpoint-mobile-bottom */}
         <ins className="adsbygoogle"
              style={{ display: 'inline-block', width: '320px', height: '100px' }}
