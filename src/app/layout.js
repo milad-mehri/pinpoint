@@ -13,47 +13,53 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Pinpoint - The Ultimate Category Guessing Game",
+  title: "Pinpoint - Daily Category Guessing Game & Unlimited Practice Mode",
   description:
-    "Challenge your knowledge and intuition in Pinpoint! Guess the correct category based on given clues. Fun, engaging, and perfect for trivia lovers!",
+    "Play Pinpoint - the ultimate category guessing game! Daily puzzles and unlimited practice mode. Challenge your knowledge with our fun, free online game. Perfect for trivia lovers!",
   openGraph: {
-    title: "Pinpoint - The Ultimate Category Guessing Game",
+    title: "Pinpoint - Daily Category Guessing Game & Unlimited Practice Mode",
     description:
-      "Test your knowledge and intuition in Pinpoint! Can you guess the correct category from the clues? Join the fun now!",
+      "Play Pinpoint - the ultimate category guessing game! Daily puzzles and unlimited practice mode. Challenge your knowledge with our fun, free online game.",
     url: "https://playpinpoint.co",
     images: [
       {
         url: "https://playpinpoint.co/example2.gif",
         width: 1200,
         height: 630,
-        alt: "Pinpoint - The Ultimate Category Guessing Game",
+        alt: "Pinpoint Game - Category Guessing Challenge",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pinpoint - The Ultimate Category Guessing Game",
+    title: "Pinpoint - Daily Category Guessing Game & Unlimited Practice Mode",
     description:
-      "Dive into the fun of Pinpoint! Guess the categories, test your wits, and share the challenge with friends.",
+      "Play Pinpoint - the ultimate category guessing game with daily puzzles and unlimited practice mode!",
     images: ["https://playpinpoint.co/example2.gif"],
   },
   icons: {
     icon: "https://playpinpoint.co/favicon.ico",
   },
   keywords: [
+    "pinpoint game",
+    "pinpoint game unlimited",
+    "pinpoint unlimited",
+    "pinpoint unlimited game",
+    "pinpoint category game",
+    "pinpoint game online",
+    "game pinpoint",
+    "pin point game",
+    "pin point games",
+    "pin-point game",
     "category guessing game",
-    "Pinpoint",
-    "linkedin games",
-    "trivia game",
-    "knowledge challenge",
-    "intuitive guessing",
-    "pinpoint LinkedIn",
-    "category clues",
+    "daily puzzle game",
+    "online trivia game",
     "word guessing game",
-    "engaging games",
-    "guess the category",
-    "online trivia game"
+    "knowledge challenge"
   ],
+  alternates: {
+    canonical: "https://playpinpoint.co"
+  }
 };
 
 export default function RootLayout({ children }) {

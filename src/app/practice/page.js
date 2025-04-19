@@ -6,6 +6,19 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Papa from "papaparse"; // Install and import PapaParse for client-side parsing
 
+export const metadata = {
+  title: "Pinpoint Unlimited - Practice Mode | Category Guessing Game",
+  description: "Play Pinpoint's unlimited practice mode! Endless category guessing challenges to improve your skills. Free online game with unlimited puzzles.",
+  openGraph: {
+    title: "Pinpoint Unlimited - Practice Mode | Category Guessing Game",
+    description: "Play Pinpoint's unlimited practice mode! Endless category guessing challenges to improve your skills. Free online game with unlimited puzzles.",
+    url: "https://playpinpoint.co/practice",
+  },
+  alternates: {
+    canonical: "https://playpinpoint.co/practice"
+  }
+};
+
 export default function Practice() {
   const router = useRouter();
 

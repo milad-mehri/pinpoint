@@ -6,6 +6,19 @@ import Link from "next/link"
 import Header from "../../components/Header"
 import { ChevronRight } from "lucide-react"
 
+export const metadata = {
+  title: "Feedback - Pinpoint Category Guessing Game",
+  description: "Share your feedback and suggestions for Pinpoint - the category guessing game. Help us improve your gaming experience!",
+  openGraph: {
+    title: "Feedback - Pinpoint Category Guessing Game",
+    description: "Share your feedback and suggestions for Pinpoint - the category guessing game. Help us improve your gaming experience!",
+    url: "https://playpinpoint.co/feedback",
+  },
+  alternates: {
+    canonical: "https://playpinpoint.co/feedback"
+  }
+};
+
 export default function FeedbackPage() {
   const [formData, setFormData] = useState({
     name: "",
