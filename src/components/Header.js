@@ -53,113 +53,75 @@ const Header = () => {
     }
   };
 
-  // Don't render banner until we've checked localStorage
-  if (!mounted || showBanner === null) {
-    return (
-      <header className="w-full bg-white shadow-md">
-        <div className="max-w-4xl mx-auto flex justify-between items-center px-4 py-4 w-full">
-          {/* Left Side - Title */}
-          <div className="text-xl font-bold flex items-center">
-            <Link href="/" className="hover:opacity-80 transition-opacity">
-              <span className="gradient-text text-2xl">Pinpoint</span>
-            </Link>{" "}
-            <span className="ml-2 text-slate-600">
-              {isDailyPage ? "Daily" : isFeedbackPage ? "Feedback" : "Practice"}
-              {isPracticePage && (
-                <span className="ml-2 bg-yellow-500 text-black px-2 py-1 rounded text-sm">
-                  EXP
-                </span>
-              )}
-            </span>
-          </div>
-
-          {/* Right Side - Navigation */}
-          <div className="flex space-x-4 items-center">
-            {isDailyPage ? (
-              <Link
-                href="/practice"
-                className="text-lg font-semibold flex items-center hover:underline"
-              >
-                Practice{" "}
-                <span className="ml-2 bg-yellow-500 text-black px-2 py-1 rounded text-sm">
-                  EXP
-                </span>
-              </Link>
-            ) : (
-              <Link
-                href="/"
-                className="text-lg font-semibold flex items-center hover:underline"
-              >
-                Daily
-              </Link>
-            )}
-
-            {/* Question Mark Icon */}
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="text-gray-500 hover:text-gray-700 transition"
-            >
-              <FontAwesomeIcon icon={faQuestionCircle} className="text-2xl" />
-            </button>
-          </div>
-        </div>
-      </header>
-    );
-  }
-
-  return (
-    <header className="w-full bg-white shadow-md">
-      {showBanner && (
-        <div className="w-full border-b border-blue-100">
-          <FeedbackBanner onDismiss={handleFeedbackDismiss} />
-        </div>
-      )}
-      <div className="max-w-4xl mx-auto flex justify-between items-center px-4 py-4 w-full">
-        {/* Left Side - Title */}
-        <div className="text-xl font-bold flex items-center">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
-            <span className="gradient-text text-2xl">Pinpoint</span>
-          </Link>{" "}
-          <span className="ml-2 text-slate-600">
+  const headerContent = (
+    <div className="max-w-4xl mx-auto flex justify-between items-center px-3 sm:px-6 py-3 sm:py-5 w-full">
+      {/* Left Side - Title */}
+      <div className="flex items-center space-x-2 sm:space-x-3">
+        <Link href="/" className="hover:opacity-90 transition-opacity">
+          <span className="gradient-text text-xl sm:text-2xl font-extrabold tracking-tight">Pinpoint</span>
+        </Link>
+        <div className="flex items-center">
+          <span className="h-4 w-px bg-gray-300 mx-2 sm:mx-3" />
+          <span className="text-sm sm:text-base font-medium text-gray-600">
             {isDailyPage ? "Daily" : isFeedbackPage ? "Feedback" : "Practice"}
             {isPracticePage && (
-              <span className="ml-2 bg-yellow-500 text-black px-2 py-1 rounded text-sm">
+              <span className="ml-1.5 sm:ml-2 bg-yellow-500 text-black px-1.5 sm:px-2.5 py-0.5 rounded-full text-xs sm:text-sm font-semibold inline-flex items-center">
                 EXP
               </span>
             )}
           </span>
         </div>
-
-        {/* Right Side - Navigation */}
-        <div className="flex space-x-4 items-center">
-          {isDailyPage ? (
-            <Link
-              href="/practice"
-              className="text-lg font-semibold flex items-center hover:underline"
-            >
-              Practice{" "}
-              <span className="ml-2 bg-yellow-500 text-black px-2 py-1 rounded text-sm">
-                EXP
-              </span>
-            </Link>
-          ) : (
-            <Link
-              href="/"
-              className="text-lg font-semibold flex items-center hover:underline"
-            >
-              Daily
-            </Link>
-          )}
-
-          {/* Question Mark Icon */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="text-gray-500 hover:text-gray-700 transition"
-          >
-            <FontAwesomeIcon icon={faQuestionCircle} className="text-2xl" />
-          </button>
-        </div>
       </div>
+
+      {/* Right Side - Navigation */}
+      <div className="flex items-center space-x-3 sm:space-x-6">
+        {isDailyPage ? (
+          <Link
+            href="/practice"
+            className="text-sm sm:text-base font-medium text-gray-700 hover:text-gray-900 transition-colors flex items-center group"
+          >
+            Practice
+            <span className="ml-1.5 sm:ml-2 bg-yellow-500 text-black px-1.5 sm:px-2.5 py-0.5 rounded-full text-xs sm:text-sm font-semibold group-hover:bg-yellow-600 transition-colors">
+              EXP
+            </span>
+          </Link>
+        ) : (
+          <Link
+            href="/"
+            className="text-sm sm:text-base font-medium text-gray-700 hover:text-gray-900 transition-colors"
+          >
+            Daily
+          </Link>
+        )}
+
+        {/* Question Mark Icon */}
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="text-gray-500 hover:text-gray-700 transition-colors p-1.5 sm:p-2 rounded-full hover:bg-gray-100"
+        >
+          <FontAwesomeIcon icon={faQuestionCircle} className="text-lg sm:text-xl" />
+        </button>
+      </div>
+    </div>
+  );
+
+  // Don't render banner until we've checked localStorage
+  if (!mounted || showBanner === null) {
+    return (
+      <header className="w-full bg-white shadow-sm border-b border-gray-200">
+        {headerContent}
+      </header>
+    );
+  }
+
+  return (
+    <header className="w-full bg-white shadow-sm border-b border-gray-200">
+      {showBanner && (
+        <div className="w-full border-b border-blue-100">
+          <FeedbackBanner onDismiss={handleFeedbackDismiss} />
+        </div>
+      )}
+      {headerContent}
       {isModalOpen && <InstructionsModal onClose={() => setIsModalOpen(false)} />}
     </header>
   );

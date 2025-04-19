@@ -53,12 +53,12 @@ export default function FeedbackPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
       {/* Header Navigation */}
-      <header className="h-[10vh] flex-shrink-0">
+      <header className="flex-shrink-0">
         <Header />
       </header>
 
       {/* Feedback Section */}
-      <main className="h-[90vh] flex-grow flex items-center justify-center px-6">
+      <main className="flex-grow flex items-start justify-center px-6 py-8">
         <AnimatePresence mode="wait">
           {submitted ? (
             <motion.div
@@ -67,7 +67,7 @@ export default function FeedbackPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.6 }}
-              className="text-left max-w-xl w-full"
+              className="text-left max-w-xl w-full mt-8"
             >
               <h1 className="text-green-600 text-5xl font-bold mb-2">Thank you for your feedback!</h1>
               <p className="text-sm text-gray-500 mb-10">Some small text here cuz it looks cool</p>
