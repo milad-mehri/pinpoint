@@ -62,19 +62,33 @@ body {
 html {
   height: 100%;
   /* Prevent pull-to-refresh on mobile */
-  overflow: hidden;
-  position: fixed;
+  position: relative;
   width: 100%;
-  height: 100%;
+}
+
+@media (max-width: 640px) {
+  html {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 body {
   /* Allow scrolling within the body */
-  overflow-y: auto;
+  min-height: 100%;
   overscroll-behavior-y: none;
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 100%;
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-y: auto;
+    position: absolute;
+    height: 100%;
+  }
 }
 
 /* Gradient animation for pinpoint text */

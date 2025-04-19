@@ -100,7 +100,7 @@ export default function DailyPuzzle() {
 
         {/* Main Content */}
         <main className="flex-grow flex flex-col bg-gray-100">
-          <div className="flex-grow flex flex-col md:justify-center min-h-[calc(100vh-4rem)] pt-6 md:pt-0">
+          <div className="flex-grow flex flex-col md:justify-center h-[calc(100vh-6rem)] pt-6 md:pt-0">
             <Game
               words={words}
               category={puzzle.category}
