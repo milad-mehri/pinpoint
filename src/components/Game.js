@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import dynamic from 'next/dynamic';
 import { useGameState } from "../hooks/useGameState";
@@ -17,6 +17,8 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
   // Initialize with null to avoid hydration mismatch
   const [isMobile, setIsMobile] = useState(null);
   const [mounted, setMounted] = useState(false);
+  const inputRef = useRef(null);
+  const containerRef = useRef(null);
 
   const {
     revealedWords,
@@ -105,13 +107,31 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
     }
   };
 
+  // Prevent scroll on focus
+  const handleFocus = (e) => {
+    e.preventDefault();
+    // Store current scroll position
+    const scrollPos = window.scrollY;
+
+    // Add a small delay to let the keyboard open
+    setTimeout(() => {
+      // Restore scroll position
+      window.scrollTo(0, scrollPos);
+
+      // If we're on iOS, we need an additional fix
+      if (isMobile && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        containerRef.current.scrollIntoView({ block: 'center' });
+      }
+    }, 100);
+  };
+
   // Don't render anything until after hydration
   if (!mounted) {
     return null;
   }
 
   return (
-    <div className={STYLES.container}>
+    <div ref={containerRef} className={STYLES.container}>
       <div className={STYLES.wordSection}>
         {words.map((word, index) => (
           <WordDisplay
@@ -165,18 +185,19 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
         ) : (
           <>
             <input
+              ref={inputRef}
               type="text"
-              autoFocus={mounted}
+              autoFocus={false}
               value={input}
               readOnly={false}
               onChange={(e) => setInput(e.target.value)}
+              onFocus={handleFocus}
               onKeyPress={(e) => {
                 if (e.key === "Enter") handleGuess();
               }}
               placeholder="Guess the category..."
-              className={STYLES.input}
+              className={`${STYLES.input} prevent-scroll`}
             />
-
           </>
         )}
       </div>

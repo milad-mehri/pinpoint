@@ -80,22 +80,24 @@ export default async function PracticePuzzle({ params }) {
 
     // 8. Render the page with the fetched puzzle data
     return (
-      <div className="h-screen flex flex-col custom:overflow-auto">
+      <div className="min-h-screen flex flex-col">
         {/* Header */}
-        <header className="h-[10vh] flex-shrink-0">
+        <header className="flex-shrink-0">
           <Header />
         </header>
 
         {/* Main content */}
-        <main className="h-[90vh] flex-grow lg:flex items-center justify-center bg-gray-100">
-          <Game
-            words={words}
-            category={puzzle.category}
-            keyWords={puzzle.key_words}
-            difficulty={puzzle.difficulty}
-            mode="practice"
-            gameId={puzzleNumber}
-          />
+        <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
+          <div className="mt-4 lg:mt-0">
+            <Game
+              words={words}
+              category={puzzle.category}
+              keyWords={puzzle.key_words}
+              difficulty={puzzle.difficulty}
+              mode="practice"
+              gameId={puzzleNumber}
+            />
+          </div>
         </main>
       </div>
     );

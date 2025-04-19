@@ -88,21 +88,23 @@ export default function DailyPuzzle() {
 
   // Render the puzzle
   return (
-    <div className="h-screen flex flex-col overflow-hidden custom:overflow-auto">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="h-[10vh] flex-shrink-0">
+      <header className="flex-shrink-0">
         <Header />
       </header>
 
       {/* Main Content */}
-      <main className="h-[90vh] flex-grow overflow-hidden lg:flex items-center justify-center bg-gray-100">
-        <Game
-          words={words}
-          category={puzzle.category}
-          keyWords={puzzle.key_words}
-          difficulty={puzzle.difficulty}
-          mode="daily"
-        />
+      <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
+        <div className="mt-4 lg:mt-0">
+          <Game
+            words={words}
+            category={puzzle.category}
+            keyWords={puzzle.key_words}
+            difficulty={puzzle.difficulty}
+            mode="daily"
+          />
+        </div>
       </main>
     </div>
   );
