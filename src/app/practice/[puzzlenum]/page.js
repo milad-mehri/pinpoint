@@ -89,8 +89,8 @@ export default async function PracticePuzzle({ params }) {
           </header>
 
           {/* Main content */}
-          <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
-            <div className="mt-4 lg:mt-0">
+          <main className="flex-grow flex flex-col bg-gray-100">
+            <div className="flex-grow flex flex-col md:justify-center min-h-[calc(100vh-4rem)] pt-6 md:pt-0">
               <Game
                 words={words}
                 category={puzzle.category}
