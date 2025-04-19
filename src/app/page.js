@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Game from "../components/Game";
-import GameLayout from "../components/GameLayout";
+import AdLayout from "../components/AdLayout";
 import Papa from "papaparse";
 import { DateTime } from "luxon";
 
@@ -99,7 +99,7 @@ export default function DailyPuzzle() {
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
-        <GameLayout>
+        <AdLayout>
           <div className="mt-4 lg:mt-0">
             <Game
               words={words}
@@ -109,7 +109,7 @@ export default function DailyPuzzle() {
               mode="daily"
             />
           </div>
-        </GameLayout>
+        </AdLayout>
       </main>
     </div>
   );
