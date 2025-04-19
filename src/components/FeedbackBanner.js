@@ -20,7 +20,7 @@ export default function FeedbackBanner({ onDismiss }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <span>Pinpoint needs your help to improve. </span>
+            <span>Improved puzzles coming soon! </span>
             <Link
               href="/feedback"
               className="font-medium text-blue-600 underline hover:text-blue-800"

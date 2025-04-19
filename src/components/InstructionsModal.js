@@ -35,7 +35,7 @@ const InstructionsModal = ({ onClose }) => {
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 p-6 relative"
+          className="bg-white rounded-lg shadow-lg max-w-lg w-full mx-4 p-6 relative max-h-[90vh] overflow-y-auto"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
