@@ -49,27 +49,29 @@ const AdLayout = ({ children }) => {
       />
 
       {/* Desktop and Tablet Ads */}
-      <div className="hidden md:block">
+      <div className="hidden xl:block">
         {/* Left Ad */}
-        <div className="fixed left-4 top-1/2 -translate-y-1/2 z-10">
-          {/* pinpoint-left */}
-          <ins className="adsbygoogle"
-               style={{ display: 'inline-block', width: '160px', height: '600px' }}
-               data-ad-client="ca-pub-8194314786011681"
-               data-ad-slot="1907975431"
-               data-ad-format="vertical"
-               data-full-width-responsive="false" />
+        <div className="fixed left-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="pointer-events-auto">
+            <ins className="adsbygoogle"
+                 style={{ display: 'inline-block', width: '120px', height: '600px' }}
+                 data-ad-client="ca-pub-8194314786011681"
+                 data-ad-slot="1907975431"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false" />
+          </div>
         </div>
 
         {/* Right Ad */}
-        <div className="fixed right-4 top-1/2 -translate-y-1/2 z-10">
-          {/* pinpoint-right */}
-          <ins className="adsbygoogle"
-               style={{ display: 'inline-block', width: '160px', height: '600px' }}
-               data-ad-client="ca-pub-8194314786011681"
-               data-ad-slot="2762726259"
-               data-ad-format="vertical"
-               data-full-width-responsive="false" />
+        <div className="fixed right-4 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+          <div className="pointer-events-auto">
+            <ins className="adsbygoogle"
+                 style={{ display: 'inline-block', width: '120px', height: '600px' }}
+                 data-ad-client="ca-pub-8194314786011681"
+                 data-ad-slot="2762726259"
+                 data-ad-format="vertical"
+                 data-full-width-responsive="false" />
+          </div>
         </div>
       </div>
 
@@ -77,8 +79,7 @@ const AdLayout = ({ children }) => {
       {children}
 
       {/* Mobile Bottom Ad */}
-      <div className="md:hidden mt-4 w-full flex justify-center">
-        {/* pinpoint-mobile-bottom */}
+      <div className="xl:hidden mt-4 w-full flex justify-center">
         <ins className="adsbygoogle"
              style={{ display: 'inline-block', width: '320px', height: '100px' }}
              data-ad-client="ca-pub-8194314786011681"
