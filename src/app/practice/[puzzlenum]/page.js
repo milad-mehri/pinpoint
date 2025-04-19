@@ -2,6 +2,7 @@
 
 import Header from "../../../components/Header";
 import Game from "../../../components/Game";
+import AdLayout from "../../../components/AdLayout";
 import { promises as fs } from "fs";
 import path from "path";
 import Papa from "papaparse";
@@ -81,24 +82,26 @@ export default async function PracticePuzzle({ params }) {
     // 8. Render the page with the fetched puzzle data
     return (
       <div className="min-h-screen flex flex-col">
-        {/* Header */}
-        <header className="flex-shrink-0">
-          <Header />
-        </header>
+        <AdLayout>
+          {/* Header */}
+          <header className="flex-shrink-0">
+            <Header />
+          </header>
 
-        {/* Main content */}
-        <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
-          <div className="mt-4 lg:mt-0">
-            <Game
-              words={words}
-              category={puzzle.category}
-              keyWords={puzzle.key_words}
-              difficulty={puzzle.difficulty}
-              mode="practice"
-              gameId={puzzleNumber}
-            />
-          </div>
-        </main>
+          {/* Main content */}
+          <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
+            <div className="mt-4 lg:mt-0">
+              <Game
+                words={words}
+                category={puzzle.category}
+                keyWords={puzzle.key_words}
+                difficulty={puzzle.difficulty}
+                mode="practice"
+                gameId={puzzleNumber}
+              />
+            </div>
+          </main>
+        </AdLayout>
       </div>
     );
   } catch (error) {

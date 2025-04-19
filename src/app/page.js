@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Game from "../components/Game";
+import AdLayout from "../components/AdLayout";
 import Papa from "papaparse";
 import { DateTime } from "luxon";
 
@@ -91,23 +92,25 @@ export default function DailyPuzzle() {
   // Render the puzzle
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="flex-shrink-0">
-        <Header />
-      </header>
+      <AdLayout>
+        {/* Header */}
+        <header className="flex-shrink-0">
+          <Header />
+        </header>
 
-      {/* Main Content */}
-      <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
-        <div className="mt-4 lg:mt-0">
-          <Game
-            words={words}
-            category={puzzle.category}
-            keyWords={puzzle.key_words}
-            difficulty={puzzle.difficulty}
-            mode="daily"
-          />
-        </div>
-      </main>
+        {/* Main Content */}
+        <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
+          <div className="mt-4 lg:mt-0">
+            <Game
+              words={words}
+              category={puzzle.category}
+              keyWords={puzzle.key_words}
+              difficulty={puzzle.difficulty}
+              mode="daily"
+            />
+          </div>
+        </main>
+      </AdLayout>
     </div>
   );
 }
