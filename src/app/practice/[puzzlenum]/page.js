@@ -2,7 +2,6 @@
 
 import Header from "../../../components/Header";
 import Game from "../../../components/Game";
-import AdLayout from "../../../components/AdLayout";
 import { promises as fs } from "fs";
 import path from "path";
 import Papa from "papaparse";
@@ -89,18 +88,16 @@ export default async function PracticePuzzle({ params }) {
 
         {/* Main content */}
         <main className="flex-grow flex flex-col sm:justify-start lg:justify-center bg-gray-100">
-          <AdLayout>
-            <div className="mt-4 lg:mt-0">
-              <Game
-                words={words}
-                category={puzzle.category}
-                keyWords={puzzle.key_words}
-                difficulty={puzzle.difficulty}
-                mode="practice"
-                gameId={puzzleNumber}
-              />
-            </div>
-          </AdLayout>
+          <div className="mt-4 lg:mt-0">
+            <Game
+              words={words}
+              category={puzzle.category}
+              keyWords={puzzle.key_words}
+              difficulty={puzzle.difficulty}
+              mode="practice"
+              gameId={puzzleNumber}
+            />
+          </div>
         </main>
       </div>
     );
