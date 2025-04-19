@@ -150,7 +150,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
       <div className="space-y-4">
         <div className="mt-4 flex flex-wrap gap-2">
           {guesses.map((guess, index) => (
-            <span key={index} className="line-through text-gray-500">
+            <span key={index} className="line-through text-gray-500 tracking-wide">
               {guess}
             </span>
           ))}
@@ -165,18 +165,18 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
           >
             {correctGuess ? (
               <>
-                <p className="text-lg text-green-500 mb-2">
+                <p className="text-lg text-green-500 mb-2 font-medium tracking-tight">
                   Correct! You are smarter than{" "}
                   <span className="font-bold">{difficulty}%</span> of players.
                 </p>
-                <h2 className="text-2xl font-bold text-black">{category}</h2>
+                <h2 className="text-2xl font-bold text-black tracking-tight">{category}</h2>
               </>
             ) : (
               <>
-                <p className="text-lg text-red-500 mb-2">
+                <p className="text-lg text-red-500 mb-2 font-medium tracking-tight">
                   Wrong! You did not guess correct.
                 </p>
-                <h2 className="text-2xl font-bold text-black">{category}</h2>
+                <h2 className="text-2xl font-bold text-black tracking-tight">{category}</h2>
               </>
             )}
             {mode === GAME_MODES.DAILY && <DailyTimer />}
@@ -196,7 +196,7 @@ const Game = ({ words, category, keyWords, difficulty, mode, gameId = 0 }) => {
                 if (e.key === "Enter") handleGuess();
               }}
               placeholder="Guess the category..."
-              className={`${STYLES.input} prevent-scroll`}
+              className={`${STYLES.input} tracking-wide font-medium placeholder:text-gray-400`}
             />
           </>
         )}

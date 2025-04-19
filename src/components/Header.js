@@ -27,8 +27,8 @@ const Header = () => {
       <div className="max-w-4xl mx-auto flex justify-between items-center px-4 py-4 w-full">
         {/* Left Side - Title */}
         <div className="text-xl font-bold flex items-center">
-          <Link href="/" className="hover:underline">
-            <span>Pinpoint</span>
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <span className="gradient-text text-xl">Pinpoint</span>
           </Link>{" "}
           <span className="ml-2 text-slate-600">
             {isDailyPage ? "Daily" : isFeedbackPage ? "Feedback" : "Practice"}
