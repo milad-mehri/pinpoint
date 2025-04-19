@@ -2,8 +2,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const InstructionsModal = ({ onClose }) => {
+  const pathname = usePathname();
+
+  const handleLinkClick = (path) => {
+    if (pathname === path) {
+      onClose();
+    }
+  };
+
   const handleClickOutside = (e) => {
     if (e.target.id === "modal-overlay") onClose();
   };
@@ -57,7 +66,7 @@ const InstructionsModal = ({ onClose }) => {
           <img
             src="/example2.gif"
             alt="Gameplay demonstration"
-            className="w-full h-full  rounded-md object-cover scale-120"
+            className="w-full h-full rounded-md object-cover scale-120"
             style={{
               transform: "scale(1.3)",
               transition: "transform 0.3s ease",
@@ -71,6 +80,14 @@ const InstructionsModal = ({ onClose }) => {
           rel="noopener noreferrer"
         >
           Contact
+        </Link>
+        <span>, </span>
+        <Link
+          href="/feedback"
+          onClick={() => handleLinkClick('/feedback')}
+          className="text-sm text-blue-800 font-extrabold hover:underline"
+        >
+          Feedback
         </Link>
         <span>, </span>
         <Link
