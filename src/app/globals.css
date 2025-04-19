@@ -91,6 +91,16 @@ body {
 }
 
 .gradient-text {
+  /* Fallback color in case gradient doesn't work */
+  color: #1e3a8a;
+  
+  /* Gradient background */
+  background: -webkit-linear-gradient(
+    90deg,
+    #1e3a8a 0%,
+    rgb(173, 216, 230) 50%,
+    #1e3a8a 100%
+  );
   background: linear-gradient(
     90deg,
     #1e3a8a 0%,
@@ -98,11 +108,58 @@ body {
     #1e3a8a 100%
   );
   background-size: 200% auto;
-  color: transparent;
+  
+  /* Text fill properties with all vendor prefixes */
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  
+  /* Animation properties */
+  -webkit-animation: gradient 12s ease infinite;
+  -moz-animation: gradient 12s ease infinite;
   animation: gradient 12s ease infinite;
+  
+  /* Font properties */
   font-family: var(--font-sans);
   font-weight: 900;
   letter-spacing: 0.02em;
+}
+
+/* Ensure animation keyframes have vendor prefixes */
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
