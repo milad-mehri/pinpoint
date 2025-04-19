@@ -9,7 +9,7 @@ const GameLayout = ({ children }) => {
           <div className="hidden lg:block w-[300px] min-h-[600px]">
             <div className="sticky top-4">
               <GoogleAd
-                slot="1234567890"
+                slot="1907975431"
                 style={{ display: 'block', minHeight: '600px' }}
               />
             </div>
@@ -22,7 +22,7 @@ const GameLayout = ({ children }) => {
             {/* Mobile Ad - Below content */}
             <div className="lg:hidden mt-8">
               <GoogleAd
-                slot="0987654321"
+                slot="1449644587"
                 style={{ display: 'block', minHeight: '250px' }}
               />
             </div>
@@ -32,7 +32,7 @@ const GameLayout = ({ children }) => {
           <div className="hidden lg:block w-[300px] min-h-[600px]">
             <div className="sticky top-4">
               <GoogleAd
-                slot="5432109876"
+                slot="2762726259"
                 style={{ display: 'block', minHeight: '600px' }}
               />
             </div>
