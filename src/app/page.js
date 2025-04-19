@@ -7,11 +7,13 @@ import Papa from "papaparse";
 import { DateTime } from "luxon";
 
 /**
- * Helper function to calculate the "day of the year" based on PST.
+ * Helper function to calculate days from January 1, 2025
  */
-function getPSTDayOfYear() {
+function getDaysFromJan2025() {
   const now = DateTime.utc().setZone("America/Los_Angeles");
-  return now.ordinal; // Returns 1-based day of the year
+  const jan2025 = DateTime.fromObject({ year: 2025, month: 1, day: 1 }, { zone: "America/Los_Angeles" });
+  const diffDays = now.diff(jan2025, 'days').days;
+  return Math.floor(diffDays) + 2; // Add 2 to start from line 2
 }
 
 /**
@@ -31,11 +33,11 @@ async function getDailyPuzzleClient() {
     throw new Error("Invalid CSV format.");
   }
 
-  const dayOfYear = getPSTDayOfYear();
-  const index = dayOfYear - 1; // Adjust for 1-based dayOfYear
+  const daysFromJan2025 = getDaysFromJan2025();
+  const index = daysFromJan2025 - 1; // Convert to 0-based index
 
   if (index >= parsedData.data.length) {
-    throw new Error("Day of the year out of range.");
+    throw new Error("Not enough puzzles available for this date. Please add more puzzles to daily.csv.");
   }
 
   return parsedData.data[index]; // Return the puzzle for the current day
