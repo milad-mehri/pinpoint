@@ -6,7 +6,11 @@ import { useEffect } from "react";
 const AdLayout = ({ children }) => {
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      // Initialize each ad unit separately
+      const adElements = document.getElementsByClassName("adsbygoogle");
+      for (let ad of adElements) {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }
     } catch (err) {
       console.error('Error initializing ads:', err);
     }
@@ -18,6 +22,12 @@ const AdLayout = ({ children }) => {
       <div className="hidden lg:block">
         {/* Left Ad */}
         <div className="fixed left-4 top-1/2 -translate-y-1/2 w-[300px] h-[600px]">
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8194314786011681"
+            crossOrigin="anonymous"
+          />
+          {/* pinpoint-left */}
           <ins className="adsbygoogle"
                style={{ display: 'block' }}
                data-ad-client="ca-pub-8194314786011681"
@@ -28,6 +38,12 @@ const AdLayout = ({ children }) => {
 
         {/* Right Ad */}
         <div className="fixed right-4 top-1/2 -translate-y-1/2 w-[300px] h-[600px]">
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8194314786011681"
+            crossOrigin="anonymous"
+          />
+          {/* pinpoint-right */}
           <ins className="adsbygoogle"
                style={{ display: 'block' }}
                data-ad-client="ca-pub-8194314786011681"
@@ -43,6 +59,12 @@ const AdLayout = ({ children }) => {
 
         {/* Mobile Bottom Ad */}
         <div className="lg:hidden mt-4 w-full min-h-[100px] flex justify-center">
+          <Script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8194314786011681"
+            crossOrigin="anonymous"
+          />
+          {/* pinpoint-mobile-bottom */}
           <ins className="adsbygoogle"
                style={{ display: 'block' }}
                data-ad-client="ca-pub-8194314786011681"
@@ -51,17 +73,6 @@ const AdLayout = ({ children }) => {
                data-full-width-responsive="true" />
         </div>
       </div>
-
-      {/* AdSense Script */}
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8194314786011681"
-        crossOrigin="anonymous"
-        strategy="afterInteractive"
-        onError={(e) => {
-          console.error('Error loading AdSense script:', e);
-        }}
-      />
     </>
   );
 };
